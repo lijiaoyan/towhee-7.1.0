@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>MCCCS Towhee (MM2)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (MM2)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers the MM2 force field as it is implemented into 
+	the towhee_ff_MM2 file in the ForceFields directory.  This force field was originally 
+	designed for to reproduce hydrocarbon crystal data.
+	Note that this is an Exponential-6 force field that uses explicit mixing rules so it is
+	not easily combined with other force fields.
+	Any discrepencies (especially typos) from the published values are the sole responsibility
+	of Marcus G. Martin, and I welcome feedback on how this implementation compares
+	with other programs.
+      </ul>
+
+      <b>References for MM2</b> 
+      <ul>
+        MM2 is described in the following paper.
+	<ul>
+	  <li><a href="../references.html#allinger_1977">Allinger 1977</a></li>
+	</ul>
+      </ul>	
+
+      <b>MM2 in Towhee</b> 
+      <ul>
+        The official force field name for MM2 in Towhee is 'MM2'.  Here I list all of 
+	the atom names for use in the towhee_input file, along with a brief description.  I created these
+	atom names in order to work with the molecule assembler.
+	
+	Please note that the capitalization and spacing pattern is important 
+	and must be followed exactly as listed here.
+	<ul>
+          <li><b>'Ccc**(sp3)'</b> : Carbon single bonded to 2 or more other carbons.</li>
+          <li><b>'Cchhh(sp3)'</b> : Carbon single bonded to 1 carbon and 3 hydrogens.</li>
+          <li><b>'H'</b> : hydrogen.</li>
+	</ul>
+      </ul>
+      <b>Coulombic interactions</b> 
+      <ul>
+        This force field does not use coulombic interactions.
+      </ul>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->September 07, 2005<!-- #EndDate -->
+</font> <br>
+</body>
+</html>
+
+

@@ -1,0 +1,200 @@
+<html>
+<head>
+  <title>MCCCS Towhee (Charmm22)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (Charmm22)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers the Charmm22 force field as it is implemented into 
+	the towhee_ff_Charmm22 file in the ForceFields directory.  All of the Towhee atom types for the Charmm22 force 
+	field are listed, along with a short description of their meanings.  For 
+	more information about the Charmm family of force fields see 
+	<a href="http://master2.lobos.nih.gov/Charmm/">Bernard Brooks's Charmm home page</a> or the
+	<a href="http://www.pharmacy.umaryland.edu/faculty/amackere/">MacKerrel web site</a> or the
+	<a href="http://www.charmm.org/">Charmm.org</a> web site..
+	Note that Charmm22 is a Lennard-Jones (12-6) force field and can only be combined 
+	with other Lennard-Jones (12-6) force fields.
+	I would like to acknowledge Alex D. MacKerrel and Tom B. Woolf for providing
+	useful guidance about implementing Charmm22.  Any discrepencies (especially typos) 
+	from the published Charmm22 force field values are the sole responsibility
+	of Marcus G. Martin, and I welcome feedback on how this implementation compares
+	with other programs.
+        <p>&nbsp;</p>
+      </ul>
+
+      <b>References for Charmm22</b> 
+      <ul>
+        The best literature reference for Charmm22 is
+	<ul>
+	  <li><a href="../references.html#mackerell_et_al_1998">MacKerell <i>et al.</i> 1998</a></li>
+	</ul>
+	An electronic version of the Charmm22 parameters can be found at the 
+	<a href="http://www.pharmacy.umaryland.edu/faculty/amackere/force_fields.htm">MacKerell force fields site</a>.
+      </ul>	
+
+      <b>Charmm22 in Towhee</b> 
+      <ul>
+        The official force field name for Charmm22 in Towhee is 'Charmm22'.  Here I list all of 
+	the Charmm22 atom names for use in the towhee_input file, along with a brief description taken
+	from the MacKerell <i>et al.</i> 1998 paper supplementary information.  I have added some comments where I thought 
+	clarification was needed, these are all in [square brackets].
+
+	Please note that the capitalization and spacing pattern is important 
+	and must be followed exactly as listed here.
+	<ul>
+          <li><b>'C'</b> : polar C</li>
+          <li><b>'CA'</b> : aromatic C</li>
+          <li><b>'CT1'</b> : aliphatic sp<sup>3</sup> C for CH</li>
+          <li><b>'CT2'</b> : aliphatic sp<sup>3</sup> C for CH<sub>2</sub></li>
+          <li><b>'CT3'</b> : aliphatic sp<sup>3</sup> C for CH<sub>3</sub></li>
+          <li><b>'CPH1'</b> : his CG and CD2 carbons</li>
+          <li><b>'CPH2'</b> : his CE1 carbon</li>
+          <li><b>'CPT'</b> : trp C between rings</li>
+          <li><b>'CY'</b> : trp C in pyrrole ring</li>
+          <li><b>'CP1'</b> : tetrahedral C (proline CA)</li>
+          <li><b>'CP2'</b> : tetrahedral C (proline CB/CG)</li>
+          <li><b>'CP3'</b> : tetrahedral C (proline CD)</li>
+          <li><b>'CC'</b> : carbonyl C for sidechains asn, asp, gln, glu</li>
+          <li><b>'CD'</b> : carbonyl C for none amides, asp, glu, cter</li>
+          <li><b>'CPA'</b> : heme alpha-C</li>
+          <li><b>'CPB'</b> : heme beta-C</li>
+          <li><b>'CPM'</b> : heme meso-C</li>
+          <li><b>'CM'</b> : heme CO carbon</li>
+          <li><b>'CS'</b> : thiolate carbon</li>
+          <li><b>'CE1'</b> : for alkene; RHC=CR</li>
+          <li><b>'CE2'</b> : for alkene; H<sub>2</sub>C=CR</li>
+          <li><b>'FE'</b> : heme iron</li>
+          <li><b>'H'</b> : polar H</li>
+          <li><b>'HC'</b> : N-ter H</li>
+          <li><b>'HA'</b> : nonpolar H</li>
+          <li><b>'HT'</b> : TIPS3P water hydrogen</li>
+          <li><b>'HP'</b> : aromatic H</li>
+          <li><b>'HB'</b> : backbone H</li>
+          <li><b>'HR1'</b> : his he1, (+) his HG,HD2</li>
+          <li><b>'HR2'</b> : (+) his HE1</li>
+          <li><b>'HR3'</b> : neutral his HG, HD2</li>
+          <li><b>'HS'</b> : thiol hydrogen</li>
+          <li><b>'HA1'</b> : for alkene; RHC=CR</li>
+          <li><b>'HA2'</b> : for alkene; H<sub>2</sub>C=CR</li>
+          <li><b>'N'</b> : proline N</li>
+          <li><b>'NR1'</b> : neutral his protonated ring nitrogen</li>
+          <li><b>'NR2'</b> : neutral his unprotonated ring nitrogen</li>
+          <li><b>'NR3'</b> : charged his ring nitrogen</li>
+          <li><b>'NH1'</b> : peptide nitrogen</li>
+          <li><b>'NH2'</b> : amide nitrogen</li>
+          <li><b>'NH3'</b> : ammonium nitrogen</li>
+          <li><b>'NC2'</b> : guanidinium nitrogen</li>
+          <li><b>'NY'</b> : trp N in pyrrole ring</li>
+          <li><b>'NP'</b> : proline ring NH<sub>2</sub><sup>+</sup> (N-terminal)</li>
+          <li><b>'NPH'</b> : heme pyrrole N</li>
+          <li><b>'O'</b> : carbonyl oxygen</li>
+          <li><b>'OB'</b> : carbonyl oxygen in acetic acid</li>
+          <li><b>'OC'</b> : carboxylate oxygen</li>
+          <li><b>'OH1'</b> : hydroxyl oxygen</li>
+          <li><b>'OS'</b> : ester oxygen</li>
+          <li><b>'OT'</b> : TIPS3P water oxygen</li>
+          <li><b>'OM'</b> : heme CO/O2 oxygen</li>
+          <li><b>'S'</b> : sulphur</li>
+          <li><b>'SM'</b> : sulfur C-S-S-C type</li>
+          <li><b>'SS'</b> : thiolate sulfur</li>
+	</ul>
+      </ul>
+
+      <b>Coulombic Interactions</b> 
+      <ul>
+        Charmm 22 utilizes point charges on atomic centers to represent the charge distribution on a molecule.  As far as I know, 
+	there is no automated system for assigning the charges in Charmm 22.  However, Charmm22 uses a neutral group aproach for 
+	most moities found in organic molecules.  It is fairly easy to scan through the example molecular charge distributions 
+	found in the files available at the 
+	<a href="http://www.pharmacy.umaryland.edu/faculty/amackere/research.html">MacKerell research web site</a> and determine 
+	what charges to apply to the molecule you wish to simulate.  His 
+	<a href="http://www.pharmacy.umaryland.edu/faculty/amackere/force_fields.htm">Charmm Empirical Force Fields</a> web page 
+	is especially helpful.
+      </ul>
+      <b>Improper torsions</b> 
+      <ul>
+        Improper torsions are not automatically generated by the Towhee code as the rules for determining where they are applied 
+        are not always straight-forward.  Charmm22 exclusively uses the out-of-plane version of the improper torsions, and they
+        are typically centered on an sp<sup>2</sup> atom in order to enforce planarity with its three neighbors.  
+	These torsions are listed in the Charmm22 literature as i-j-k-l where the angle is the dihedral between i-j-k and j-k-l.
+	The bonding pattern is not completely clear to me, but it appears that either i or l is the central atom which is bonded 
+	to all three of the other atoms, and none of the other three atoms are bonded to each other.
+	In the towhee_input file the improper torsions is listed starting from the central atom and 
+	the three other atoms are listed in the same order as Charmm22.  So, if the central atom is i, then the atoms are listed j, 
+	k, l.  If the central atom is l then the atoms are listed k, j, i.
+	Remember that you can set the improper type to 0 to have the code automatically determine the improper type (so long 
+	as inpstyle is 2).
+      </ul>
+
+      <b>Proteins</b> 
+      <ul>
+        All of the 20 basic amino acids (including the 3 forms of hystidine and the thiol and disulfide forms of cysteine)
+	are functional for the Charmm22 force field. I have implemented the atom types and charges according to the published 
+	Charmm22 values.  Below is a complete list of the codes for the 20 amino acids, plus some other functional groups that 
+	work with the protein builder.
+	<ul>
+	  <li>'a0' alanine</li>
+	  <li>'c0' cysteine with hydrogen on the sulfur</li>
+	  <li>'cs' cysteine in a disulfide bond</li>
+	  <li>'cp' cysteine bonded to palmitate (includes the palmitate)</li>
+	  <li>'d-' aspartic acid deprotonated</li>
+	  <li>'e-' glutamic acid deprotonated</li>
+	  <li>'f0' phenylalanine</li>
+	  <li>'g0' glycine</li>
+	  <li>'h+' histidine both N protonated</li>
+	  <li>'hd' histidine neutral with only N<sub>d</sub> protonated</li>
+	  <li>'he' histidine neutral with only N<sub>e</sub> protonated</li>
+	  <li>'i0' isoleucine</li>
+	  <li>'k+' lysine protonated</li>
+	  <li>'kr' lysine-like retinal</li>
+	  <li>'l0' leucine</li>
+	  <li>'m0' methionine</li>
+	  <li>'n0' asparagine</li>
+	  <li>'p0' proline</li>
+	  <li>'q0' glutamine</li>
+	  <li>'r+' arginine protonated</li>
+	  <li>'s0' serine</li>
+	  <li>'t0' threonine</li>
+	  <li>'v0' valine</li>
+	  <li>'w0' tryptophan</li>
+	  <li>'y0' tyrosine</li>
+	  <li>'za' acetyl cap on the N-terminus</li>
+	  <li>'ze' ethanolamine cap on the C-terminus</li>
+	  <li>'zf' formaldahyde cap on the N-terminus</li>
+	  <li>'zm' amide cap (NH<sub>2</sub>) on the C-terminus.  Note: differs from official charmm22 by
+	  having a 0.31 charge on both terminal H instead of giving one 0.30 and the other 0.32.</li>
+	  <li>'zn' N-methylamide cap on the C-terminus</li>
+	</ul>
+      </ul>
+      <p>&nbsp;</p>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->May 12, 2006<!-- #EndDate -->
+</font> <br>
+</body>
+</html>

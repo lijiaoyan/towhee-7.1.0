@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title>MCCCS Towhee (database_input)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (database_input) </font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This sections covers the values that are set in the database_input file.  This file
+	is only used in conjunction with the 'Database' setting of the <b>inputformat</b> variable.
+	The database_input file is a work in progress and the format is not as clean as 
+	some of the other Towhee files.  This manual is accurate only for the latest version of 
+	the code (last updated for version 3.14.5).
+      </ul>
+
+      <b>Variable explanations for database_input</b> 
+
+      <ul>
+        Starting with version 3.14.5 this now uses a format we call the Sandia Database (sdb).  This 
+	format was created to facilitate sharing of information between various quantum and classical 
+	codes here at Sandia National Laboratories.  This format is still evolving to suit our needs 
+	and is designed to use key tokens for identifying variables.  In general, the keywords are read 
+	in on one line and then any associated variable are read in on the subsequent lines.
+	
+	<dt> The first line read for each entry is the <b>datastyle</b> and is indicated by an @ token.  
+	At the moment, there is only one supported option for this variable.
+	<li>'<b>@structure</b>'
+	  <ul>
+	    <dt>This setting provides the template for a structure and the energy of that structure relative to 
+	    a defined elemental ground state.  You must define one (and only one) ground state for each of the 
+	    elements in the calculation.  The formatting is a bit tricky, so I have also provided a 
+	    <a href="database_input_example_structure-energy.html">structure-energy example</a></dt>
+	    <dt><b>$start structure</b>
+	      <ul>
+	        <li>An informationtional text string that serves two purposes.  First, it is outputted 
+	        with the results in order to provide a useful reference when determining which crystal 
+	        structures are fit well and poorly.  Second, if this string ends with the letters "GS"
+	        then this is set to be the defined ground state for the element.</li>
+	      </ul>
+	    </dt>
+	    <dt><b>$notes3</b>
+	      <ul>
+	        <li>The number of comment lines in the file.  Unlike the other commands, this one has the number of 
+		skip lines built right into the string (in the case above, 3).  This allows the user to have other information at the 
+		top of the structure-energy part that is useful for other purposes, but is not used in the structure-energy
+		computation.  Must be a non-negative integer and is the number of lines immediately following 
+		this line that are skipped.
+	      </ul>
+	    </dt>
+	    <dt><b>$distance unit</b></dt>
+	    <dt>ANGSTROM</dt>
+
+	    <dt><b>$cell vectors</b>
+	      <ul>
+	        <li>The hmatrix for the unit cell.  Three vectors (one per line) in a similar manner as in towhee_input.  
+		Units are Angstroms.</li>
+	      </ul>
+	    </dt>
+	    <dt><b>$number of atoms</b>
+	      <ul>The number of atoms in the unit cell.</ul>
+	    </dt>
+	    <dt><b>$atom type position</b>
+	      <ul>Reads in a line for each atom (as specified by <b>number of atoms</b>).
+	      Each line reads in an integer counter, then a character*2 atomtype and finally the 3 values of the 
+	      double precision position vector for that atom</ul>
+	    </dt>
+	    <dt><b>$Ebinding cell</b>
+	      <ul>
+	        <li>The per atom energy (relative to the specified ground state) and the units of the energy (eV is default).  
+		</li>
+	      </ul>
+	    </dt>
+	    <dt><b>$Etotal cell</b>
+	      <ul>
+	        <li>The absolute energy of the entire unit cell and the units of the energy (Ry is default).  
+		</li>
+	      </ul>
+	    </dt>
+	  </ul>
+	</li>
+      </ul>
+      <a href="../index.html">Return to the main towhee web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->September 07, 2005<!-- #EndDate -->
+</font> <br>
+</body>
+</html>
+

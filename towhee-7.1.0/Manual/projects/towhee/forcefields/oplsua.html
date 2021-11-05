@@ -1,0 +1,250 @@
+<html>
+<head>
+  <title>MCCCS Towhee (OPLS-ua)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (OPLS-ua)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers the OPLS-ua force field as it is implemented into the towhee_ff_OPLS-ua file in the 
+	ForceFields directory. All of the Towhee atom types for the OPLS-ua force field 
+        are listed, along with a short description of their meanings. For more 
+        information about the OPLS family of force fields see the <a href="http://zarbi.chem.yale.edu/">Jorgensen 
+        group home page</a>. Note that OPLS-ua is a Lennard-Jones (12-6) force 
+        field and can only be combined with other Lennard-Jones (12-6) force fields. 
+	The rather famous OPLS water models are not included here as they are provided in their own 
+	force field files.  Please see the <a href="tip3p.html">TIP3P</a>, <a href="tip4p.html">TIP4P</a>,
+	and <a href="tip5p.html">TIP5P</a> web pages for more information about those water models.
+	Note that OPLS-ua was followed up with an all-atom version of the force field 
+	called <a href="oplsaa.html">OPLS-aa</a>
+	and has been reparameterized into what I call <a href="opls2001.html">OPLS-2001</a>.
+        Any discrepencies (especially typos) from the published OPLS-ua force field values are the sole 
+        responsibility of Marcus G. Martin, and I welcome feedback on how this 
+        implementation compares with other programs. 
+        <p>&nbsp;</p>
+      </ul>
+      <b>References for OPLS-ua</b> 
+      <ul>
+        OPLS-ua is published in a series of papers 
+        <ul>
+          <li><a href="../references.html#chandrasekhar_et_al_1984">Chandrasekhar <i>et al.</i> 1984</a></li>
+          <li><a href="../references.html#cournoyer_jorgensen_1984">Cournoyer and Jorgensen 1984</a></li>
+          <li><a href="../references.html#jorgensen_et_al_1984">Jorgensen <i>et al.</i> 1984</a></li>
+          <li><a href="../references.html#jorgensen_swenson_1985">Jorgensen and Swenson 1985</a></li>
+          <li><a href="../references.html#jorgensen_1986_alcohol">Jorgensen 1986 alcohol</a></li>
+          <li><a href="../references.html#jorgensen_1986_sulfur">Jorgensen 1986 sulfur</a></li>
+          <li><a href="../references.html#jorgensen_briggs_1988">Jorgensen and Briggs 1988</a></li>
+          <li><a href="../references.html#jorgensen_et_al_1990">Jorgensen <i>et al.</i> 1990</a></li>
+        </ul>
+      </ul>
+      <b>OPLS-ua in Towhee</b> 
+      <ul>
+        The official force field name for OPLS-ua in Towhee is 'OPLS-ua'. Here 
+        I list all of the OPLS-ua atom names for use in the towhee_input file, 
+        along with a brief description taken from the OPLS-ua literature.  I
+	have used my own judgement in creating naming conventions as they 
+	are not well defined in the literature.  Please note that the capitalization and 
+        spacing pattern is important and must be followed exactly as listed here. 
+        <ul>
+	  <dt><font color="red">Carbon (CH<sub>3</sub> United-Atoms)</font></dt>
+	  <li><b>'CH4'</b> : United-atom Methane</li>
+          <li><b>'CH3-C1'</b> : CH<sub>3</sub> united-atom consisting of 1 C
+	  and 3 H that is bonded to another carbon that is not in turn bonded 
+	  to any other carbons(example: ethane methyl group, acetonitrile methyl group)</li>
+          <li><b>'CH3-C2'</b> : CH<sub>3</sub> united-atom consisting of 1 C
+	  and 3 H that is bonded to another carbon that has 2 non-H
+	  neighbors (example: n-alkane methyl group), or is bonded to a sulfur that 
+	  is in turn bonded to a hydrogen (example: thiols).</li>
+          <li><b>'CH3-C3'</b> : CH<sub>3</sub> united-atom consisting of 1 C
+	  and 3 H that is bonded to another carbon that has 3 non-H neighbors
+	  (example: isobutane methyl group).</li>
+          <li><b>'CH3-C4'</b> : CH<sub>3</sub> united-atom consisting of 1 C
+	  and 3 H that is bonded to another carbon that has 4 non-H neighbors 
+	  (example: neopentane methyl group)</li>
+          <li><b>'CH3-X'</b> : CH<sub>3</sub> united-atom consisting of 1 C
+	  and 3 H that is bonded to an atom other than carbon that is in turn bonded to another 
+	  non-hydrogen atom or more than one hydrogram atom 
+	  (example: sulfides, disulfides, N-methylacetamide, dimethylformamide, methyl-acetate).</li>
+
+	  <dt><font color="red">Carbon (CH<sub>2</sub> United-Atoms)</font></dt>
+          <li><b>'CH2sp3-SR'</b> : CH<sub>2</sub> united-atom consisting of 1 C
+	  and 2 H with an <i>sp<sup>3</sup></i> hybridization on the C that is bonded 
+	  to a sulfur that is in turn bonded to another non-hydrogen atom 
+	  (example: sulfides and disulfides).</li>
+          <li><b>'CH2sp3-N'</b> : CH<sub>2</sub> united-atom consisting of 1 C
+	  and 2 H with an <i>sp<sup>3</sup></i> hybridization on the C that is bonded 
+	  to a nitrogen (example: C<sub>alpha</sub> in glycine, C in proline).</li>
+          <li><b>'CH2sp3'</b> : CH<sub>2</sub> united-atom consisting of 1 C
+	  and 2 H with an <i>sp<sup>3</sup></i> hybridization on the C.</li>
+	  <li><b>'CH2sp2'</b> : CH<sub>2</sub> united-atom consisting of 1 C
+	  and 2 H with an <i>sp<sup>2</sup></i> hybridization on the C.</li>
+
+	  <dt><font color="red">Carbon (CH United-Atoms)</font></dt>
+	  <li><b>'CHsp3-N'</b> : CH united-atom consisting of 1 C
+	  and 1 H with an <i>sp<sup>3</sup></i> hybridization on the C that is 
+	  bonded to a Nitrogen (example: C<sub>alpha</sub> in Ala, C<sub>alpha</sub> in Pro).</li>
+	  <li><b>'CHsp3'</b> : CH united-atom consisting of 1 C
+	  and 1 H with an <i>sp<sup>3</sup></i> hybridization on the C.</li>
+	  <li><b>'CHsp2-N'</b> : CH united-atom consisting of 1 C
+	  and 1 H with an <i>sp<sup>2</sup></i> hybridization on the C that is 
+	  bonded to a Nitrogen (example: formamide).</li>
+	  <li><b>'CHsp2'</b> : CH united-atom consisting of 1 C
+	  and 1 H with an <i>sp<sup>2</sup></i> hybridization on the C.</li>
+	  <li><b>'CHarom'</b> : CH united-atom consisting of 1 C
+	  and 1 H with an aromatic C.</li>
+
+	  <dt><font color="red">Carbon Atoms</font></dt>
+	  <li><b>'Csp3'</b> : C atom consisting of 1 C bonded to 0 H
+	  with an <i>sp<sup>3</sup></i> hybridization on the C.</li>
+	  <li><b>'Csp2'</b> : C atom consisting of 1 C bonded to 0 H
+	  with an <i>sp<sup>2</sup></i> hybridization on the C.</li>
+	  <li><b>'Csp'</b> : C atom consisting of 1 C bonded to 0 H
+	  with an <i>sp</i> hybridization on the C (example: central C in acetonitrile).</li>
+
+	  <dt><font color="red">Chlorine</font></dt>
+	  <li><b>'Cl-'</b> : Cl ion with a negative 1.0 charge.</li>
+
+	  <dt><font color="red">Fluorine</font></dt>
+	  <li><b>'F'</b> : F in Hydrogen Fluoride.</li>
+	  <li><b>'F-'</b> : F ion with a negative 1.0 charge.</li>
+
+	  <dt><font color="red">Hydrogen</font></dt>
+	  <li><b>'H'</b> : H atom bonded to something other than a carbon.</li>
+
+	  <dt><font color="red">Lithium</font></dt>
+	  <li><b>'Li+'</b> : Li ion with a positive 1.0 charge.</li>
+
+	  <dt><font color="red">Nitrogen</font></dt>
+	  <li><b>'Nsp2'</b> : Nitrogen bonded to 3 other atoms in a trigonal planar arrangement 
+	  (example: amides and amino acids).</li>
+	  <li><b>'Ns'</b> : Nitrogen triple bonded to one other atom (example: acetonitrile).</li>
+
+	  <dt><font color="red">Oxygen</font></dt>
+	  <li><b>'Osp3'</b> : sp<sup>3</sup> hybridization on an O atom that is bonded 
+	  to two other atoms.</li>
+
+	  <dt><font color="red">Sodium</font></dt>
+	  <li><b>'Na+'</b> : Na ion with a positive 1.0 charge.</li>
+
+	  <dt><font color="red">Sulfur</font></dt>
+	  <li><b>'S-HSH'</b> : sulfur bonded to 2 hydrogen atoms.</li>
+	  <li><b>'S-RSR'</b> : sulfur bonded to 2 atoms where at least one of those atoms 
+	  is not a hydrogen.</li>
+        </ul>
+      </ul>
+      <b>Coulombic interactions</b> 
+      <ul>
+        OPLS-ua uses atom-centered point charges to represent the electrostatic interactions.
+	You need to look through the <a href="../references.html#force_fields_opls">OPLS-ua literature</a> to find 
+	molecules with similar moieties to the ones on the molecule you wish to simulate.  Here I list some examples.
+	<dt>Alcohols (from <a href="../references.html#jorgensen_1986_alcohol">Jorgensen 1986 alcohols</a>)
+          <ul>
+	    <li><b>'H'</b>: -0.700</li>
+	    <li><b>'Osp3'</b>: 0.435</li>
+	    <li><b>'C'</b> that is bonded directly to the oxygen: 0.265</li>
+          </ul>
+        </dt>
+	<dt>Thiols (from <a href="../references.html#jorgensen_1986_sulfur">Jorgensen 1986 sulfur</a>)
+          <ul>
+	    <li><b>'H'</b>: 0.27</li>
+	    <li><b>'S-RSR'</b>: -0.45</li>
+	    <li><b>'CH*'</b> bonded to the thiol sulfur: 0.18</li>
+          </ul>
+        </dt>
+	<dt>Sulfides (from <a href="../references.html#jorgensen_1986_sulfur">Jorgensen 1986 sulfur</a>)
+          <ul>
+	    <li><b>'CH3-SR'</b> or <b>'CH2sp3-SR'</b>: 0.235</li>
+	    <li><b>'S-RSR'</b>: -0.47</li>
+	    <li><b>'CH3-SR'</b> or <b>'CH2sp3-SR'</b>: 0.235</li>
+          </ul>
+        </dt>
+	<dt>Disulfides (from <a href="../references.html#jorgensen_1986_sulfur">Jorgensen 1986 sulfur</a>)
+          <ul>
+	    <li><b>'CH3-SR'</b> or <b>'CH2sp3-SR'</b>: 0.30</li>
+	    <li><b>'S-RSR'</b>: -0.30</li>
+	    <li><b>'S-RSR'</b>: -0.30</li>
+	    <li><b>'CH3-SR'</b> or <b>'CH2sp3-SR'</b>: 0.30</li>
+          </ul>
+        </dt>
+	<dt>SH<sub>2</sub> (from <a href="../references.html#jorgensen_1986_sulfur">Jorgensen 1986 sulfur</a>)
+          <ul>
+	    <li><b>'H'</b>: 0.235</li>
+	    <li><b>'S-HSH'</b>: -0.47</li>
+	    <li><b>'H'</b>: 0.235</li>
+          </ul>
+        </dt>
+	<dt>HF (from <a href="../references.html#cournoyer_jorgensen_1984">Cournoyer and Jorgensen 1984</a>)
+          <ul>
+	    <li><b>'H'</b>: 0.64942</li>
+	    <li><b>'F'</b>: -0.64942</li>
+          </ul>
+        </dt>
+	<dt>Parameters for Amides and Peptides (from <a href="../references.html#jorgensen_swenson_1985">Jorgensen and Swenson 1985</a>)
+          <ul>
+	    <li><b>'Nsp2'</b> (1<sup>o</sup>) formamide, Asn: -0.85</li>
+	    <li><b>'Nsp2'</b> (2<sup>o</sup>) NMA, Ala: -0.57</li>
+	    <li><b>'Nsp2'</b> (3<sup>o</sup>) DMF, Pro: -0.57</li>
+	    <li><b>'H'</b> (N1<sup>o</sup>) formamide, Asn: 0.425</li>
+	    <li><b>'H'</b> (N2<sup>o</sup>) NMA, Ala: 0.37</li>
+	    <li><b>'Osp2'</b> (C=O) amides: -0.50</li>
+	    <li><b>'Csp2'</b> (C=O) NMA, Ala: 0.50</li>
+	    <li><b>'CHsp2-N'</b> (CH=O) formamide: 0.50</li>
+	    <li><b>'CH3-N'</b> (N2<sup>o</sup>) NMA: 0.20</li>
+	    <li><b>'CH3-N'</b> (N3<sup>o</sup>) DMF: 0.285</li>
+	    <li><b>'CH2sp3-N'</b> C<sub>alpha</sub> in Gly: 0.20</li>
+	    <li><b>'CHsp3-N'</b> C<sub>alpha</sub> in Ala: 0.20</li>
+	    <li><b>'CHsp3-N'</b> C<sub>alpha</sub> in Pro: 0.285</li>
+	    <li><b>'CH2sp3-N'</b> Pro: 0.285</li>
+	    <li><b>'CH3-N'</b> (C=O) NMA: 0.0</li>
+          </ul>
+        </dt>
+	<dt>Acetonitrile (from <a href="../references.html#jorgensen_briggs_1988">Jorgensen and Briggs 1988</a>)
+          <ul>
+	    <li><b>'CH3-C1'</b>: 0.15</li>
+	    <li><b>'Csp'</b>: 0.28</li>
+	    <li><b>'Ns'</b>: -0.43</li>
+          </ul>
+        </dt>
+
+
+      </ul>
+      <b>Improper torsions</b> 
+      <ul>
+        There are no improper torsions currently implemented for this force
+	field.
+      </ul>
+      <b>Proteins</b> 
+      <ul>
+        The protein builder is not implemented for this force field.
+      </ul>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->September 07, 2005<!-- #EndDate -->
+</font> <br>
+</body>
+</html>

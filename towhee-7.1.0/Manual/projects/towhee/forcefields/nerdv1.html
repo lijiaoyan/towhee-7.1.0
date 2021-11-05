@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>MCCCS Towhee (NERD Version 1)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (NERD Version 1)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers the NERD Version 1 United Atom (NERDv1) force field as it is implemented into 
+	the towhee_ff_NERDv1 file in the ForceFields directory.  The NERD force field has had several minor 
+	changes to parameters as time as progresses so I have broken each of these changes into a different 
+	version of the force field.  NERD Version 1 is mostly a subset of NERD Version 2, with the exception 
+	that the linear alkane torsional potential is slightly different between the two versions.  
+	All of the Towhee atom types for this force 
+	field are listed, along with a short description of their meanings.
+	Note that NERDv1 is a Lennard-Jones (12-6) force field and can only be combined with
+	other Lennard-Jones (12-6) force fields.  I would like to thank Nicholas du Preez for initiating 
+	the implementation of this force field into Towhee.
+	Any discrepencies (especially typos) from the published values are the sole responsibility
+	of Marcus G. Martin, and I welcome feedback on how this implementation compares
+	with other programs.
+        <p>&nbsp;</p>
+      </ul>
+      <b>References for NERD Version 1</b> 
+      <ul>
+        What I term NERD Version 1 is described in two papers.
+	<ul>
+	  <li><a href="../references.html#nath_et_al_1998">Nath <i>et al.</i> 1998</a></li>
+	  <li><a href="../references.html#nath_depablo_2000">Nath and de Pablo 2000</a></li>
+	</ul>
+      </ul>	
+      <b>NERDv1 in Towhee</b> 
+      <ul>
+        The official force field name for NERD Version 1 United Atom in Towhee is 'NERDv1'.  Here I list all of 
+	the atom names for use in the towhee_input file, along with a brief description.  I created these
+	atom names in order to work with the molecule assembler.  NERDv1 is a united-atom force field which lumps
+	hydrogens onto their neighboring carbons.  Note that hydrogens that are bonded to atoms other than carbon
+	are not lumped onto their neighboring atoms.  The general pattern of the names is a list of the atoms that 
+	make up the group, followed by the hybridization of the central atom, and ending in a character string that 
+	distinguishes similar atoms.
+	
+	Please note that the capitalization and spacing pattern is important 
+	and must be followed exactly as listed here.
+	<ul>
+          <li><b>'CH3sp3eth'</b> : sp<sup>3</sup> carbon plus the 3 hydrogens bonded to it (united-atom) in ethane.</li>
+          <li><b>'CH3sp3pro'</b> : sp<sup>3</sup> carbon plus the 3 hydrogens bonded to it (united-atom) in propane.</li>
+          <li><b>'CH3sp3isob'</b> : sp<sup>3</sup> carbon plus the 3 hydrogens bonded to it (united-atom) in isobutane.</li>
+          <li><b>'CH3sp32mb'</b> : sp<sup>3</sup> carbon plus the 3 hydrogens bonded to it (united-atom) bonded to 
+	  a CH group in 2-methylbutane.</li>
+          <li><b>'CH3sp3mesc'</b> : sp<sup>3</sup> carbon plus the 3 hydrogens bonded to it (united-atom) bonded to 
+	  a CH group (methyl side-chain) and not a special case listed above.</li>
+          <li><b>'CH3sp3etsc'</b> : sp<sup>3</sup> carbon plus the 3 hydrogens bonded to it (united-atom) bonded to 
+	  a CH<sub>2</sub> group that is itself bonded to a CH group (ethyl side-chain).</li>
+          <li><b>'CH3sp3gen'</b> : sp<sup>3</sup> carbon plus the 3 hydrogens bonded to it (united-atom) and not one 
+	  of the cases listed above.</li>
+          <li><b>'CH2sp3'</b> : sp<sup>3</sup> carbon plus the 2 hydrogens bonded to it (united-atom).</li>
+          <li><b>'CHsp3'</b> : sp<sup>3</sup> carbon plus the 1 hydrogen bonded to it (united-atom).</li>
+          <li><b>'CH2sp2eth'</b> : sp<sup>2</sup> carbon plus the 2 hydrogens bonded to it (united-atom) in ethene.</li>
+	</ul>
+      </ul>
+      <b>Coulombic interactions</b> 
+      <ul>
+        There are no coulombic interactions used in NERDv1, although there are some in subsequent versions of NERD.
+      </ul>
+      <b>Improper torsions</b> 
+      <ul>
+        This force field does not utilize improper torsions.
+      </ul>
+      <b>Proteins</b> 
+      <ul>
+        This force field does not have all of the groups needed for protein simulations.
+      </ul>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->September 07, 2005<!-- #EndDate -->
+</font> <br>
+</body>
+</html>
+
+

@@ -1,0 +1,180 @@
+<html>
+<head>
+  <title>MCCCS Towhee (C19eef1)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (C19eef1)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers the C19eef1 force field (which is a
+	modified version of Charmm19 that includes the EEF1 implicit
+	solvent model) as it is implemented into the towhee_ff_c19eef1
+	file in the ForceFields directory.  All of the Towhee atom
+	types for the C19eef1 force field are listed, along with a
+	short description of their meanings.  Note that Charmm19 is a
+	'12-6 plus solvation' classical_potential with 'explicit' classical_mixrule
+	so it cannot currently be combined with any other forcefields.  The implicit 
+	water solvation is toggled on and off using the <b>isolvtype</b>
+	variable in the towhee_input file.  Any
+	discrepencies (especially typos) from the published C19eef1
+	force field values are the sole responsibility of Marcus
+	G. Martin, and I welcome feedback on how this implementation
+	compares with other programs.  <p>&nbsp;</p>
+      </ul>
+
+      <b>References for C19eef1</b> 
+      <ul>
+        The best literature reference for the C19eef1 forcefield parameters is
+	<ul>
+	  <li><a href="../references.html#neria_et_al_1996">Neria <i>et al.</i> 1996</a></li>
+	</ul>
+        The best literature reference for the C19eef1 solvation parameters is
+	<ul>
+	  <li><a href="../references.html#lazaridis_karplus_1999">Lazaridis and Karplus 1999</a></li>
+	</ul>
+	There are parameter (param19_eef1.inp) and topology (toph19_eef1.inp) files 
+	which are extremely helpful, but are only available in the Charmm28 distribution.
+      </ul>	
+
+      <b>C19eef1 in Towhee</b> 
+      <ul>
+        The official force field name for C19eef1 in Towhee is 'C19eef1'.  Here I list all of 
+	the C19eef1 atom names for use in the towhee_input file, along with a brief description.  C19eef1 
+	denotes extended-atom for cases where the hydrogens and the heavy element they are bonded to are all 
+	lumped into a single interaction site.
+
+	Please note that the capitalization and spacing pattern is important 
+	and must be followed exactly as listed here.  I include the atom notes from the Neria paper.
+	<ul>
+          <li><b>'C'</b> : Carbonyl carbon</li>
+          <li><b>'CH1E'</b> : Extended aliphatic carbon with one hydrogen -CH- group</li>
+          <li><b>'CH2E'</b> : Extended aliphatic carbon with two hydrogens -CH<sub>2</sub>- group</li>
+          <li><b>'CH3E'</b> : Extended methyl terminal -CH<sub>3</sub> group</li>
+          <li><b>'CM'</b> : Carbon in carbon monoxide</li>       
+          <li><b>'CR'</b> : 4-bonded carbon in aromatics and Arginine</li>       
+          <li><b>'CR1E'</b> : Extended aromatic carbon with one hydrogen</li>
+          <li><b>'CT'</b> : aliphatic carbon</li>       
+          <li><b>'Fe'</b> : Iron</li>       
+          <li><b>'H'</b> : Polar hydrogen</li>
+          <li><b>'HC'</b> : Polar hydrogen (in Arg, Lys, and N term)</li>
+          <li><b>'HT'</b> : Water hydrogen, modified TIP3P model</li>
+          <li><b>'N'</b> : Nitrogen with no hydrogens</li>
+          <li><b>'NC2'</b> : Nitrogen bound to two hydrogens (in Arg.)</li>
+          <li><b>'NH1'</b> : Nitrogen bound to one hydrogen</li>
+          <li><b>'NH2'</b> : Nitrogen bound to two hydrogens</li>
+          <li><b>'NH3'</b> : Nitrogen bound to three hydrogens</li>
+          <li><b>'NP'</b> : Pyrole nitrogen</li>
+          <li><b>'NR'</b> : Nitrogen in an aromatic ring with no hydrogens</li>
+          <li><b>'O'</b> : Carbonyl oxygen</li>
+          <li><b>'OC'</b> : Carboxyl oxygen</li>
+          <li><b>'OH1'</b> : Hydroxyl oxygen</li>
+          <li><b>'OH2'</b> : ST2 water oxygen</li>
+          <li><b>'OM'</b> : Heme CO/O2 oxygen</li>
+          <li><b>'OS'</b> : Ester oxygen</li>
+          <li><b>'OT'</b> : Water oxygen, modified TIP3P model</li>
+          <li><b>'S'</b> : Sulfur</li>
+          <li><b>'SH1E'</b> : Extended sulfur with one hydrogen</li>
+	</ul>
+      </ul>
+
+      <b>Coulombic Interactions</b> 
+      <ul>
+        C19eef1 utilizes point charges on atomic centers to represent the charge distribution on a molecule.  As far as I know,
+	there is no automated system for assigning the charges in C19eef1.  However, C19eef1 uses a neutral group approach for 
+	most moities found in organic molecules.  The charge distibution is similiar to that used in Charmm19, except the ionic side 
+	chain amino acids are neutralized, and the specifics on how to do this can be found in Lazaridis and Karplus 1999.  
+	Otherwise, it is fairly easy to scan through the example molecular charge distributions found in the files available at the 
+	<a href="http://www.pharmacy.umaryland.edu/faculty/amackere/">MacKerell research web site</a> and determine 
+	what charges to apply to the molecule you wish to simulate.
+
+      </ul>
+      <b>Improper torsions</b> 
+      <ul>
+        Improper torsions are not automatically generated by the
+        Towhee code as the rules for determining where they are
+        applied are not always straight-forward.  C19eef1 exclusively
+        uses the out-of-plane version of the improper torsions, and
+        they are typically centered on an sp<sup>2</sup> atom in order
+        to enforce planarity with its three neighbors.  These torsions
+        are listed in the C19eef1 literature as i-j-k-l where the
+        angle is the dihedral between i-j-k and j-k-l.  The bonding
+        pattern is not completely clear to me, but it appears that
+        either i or l is the central atom which is bonded to all three
+        of the other atoms, and none of the other three atoms are
+        bonded to each other.  In the towhee_input file the improper
+        torsions is listed starting from the central atom and the
+        three other atoms are listed in the same order as C19eef1.
+        So, if the central atom is i, then the atoms are listed j, k,
+        l.  If the central atom is l then the atoms are listed k, j,
+        i.  Remember that you can set the improper type to 0 to have
+        the code automatically determine the improper type (so long as
+        inpstyle is 2).
+      </ul>
+
+      <b>Proteins</b> 
+      <ul>
+        All of the 20 basic amino acids (including the 3 forms of hystidine)
+	are functional for the C19eef1 force field. I have implemented the atom types and charges according to the published 
+	Ch19eef1 values.  Below is a complete list of the codes for the 20 amino acids, plus some other functional groups that 
+	work with the protein builder.  C19eef1 does not apply a torsion across all set of atoms connected by 3 bonds 
+	in the amino acids.  The torsions are explicitly listed for these systems in the polyc19eef1.F routine.  I tried 
+	to faithfully reproduce all of their energetics, but had to make some accomodations for tryptophan.  They have 
+	two torsions in tryptophan that span atoms that are not bonded together and I could not implement those into 
+	Towhee without a major reworking of configuartional-bias.
+	<ul>
+	  <li>'a0' alanine</li>
+	  <li>'c0' cysteine with hydrogen on the sulfur</li>
+	  <li>'d-' aspartic acid deprotonated</li>
+	  <li>'e-' glutamic acid deprotonated</li>
+	  <li>'f0' phenylalanine</li>
+	  <li>'g0' glycine</li>
+	  <li>'h+' histidine both N protonated</li>
+	  <li>'hd' histidine neutral with only N<sub>d</sub> protonated</li>
+	  <li>'he' histidine neutral with only N<sub>e</sub> protonated</li>
+	  <li>'i0' isoleucine</li>
+	  <li>'k+' lysine protonated</li>
+	  <li>'l0' leucine</li>
+	  <li>'m0' methionine</li>
+	  <li>'n0' asparagine</li>
+	  <li>'p0' proline (no parameters for N-terminal or C-terminal proline)</li>
+	  <li>'q0' glutamine</li>
+	  <li>'r+' arginine protonated</li>
+	  <li>'s0' serine</li>
+	  <li>'t0' threonine</li>
+	  <li>'v0' valine</li>
+	  <li>'w0' tryptophan</li>
+	  <li>'y0' tyrosine</li>
+	</ul>
+      </ul>
+      <p>&nbsp;</p>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->May 18, 2010<!-- #EndDate -->
+</font> <br>
+</body>
+</html>

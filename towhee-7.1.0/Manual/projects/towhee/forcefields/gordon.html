@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>MCCCS Towhee (Gordon)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (Gordon)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+       This section covers a force field parameterized by Peter A. Gordon to work with the Gordon n-6 potential.  There are multiple parameters for united-atom methane, plus 
+       parameters for n-alkanes.
+      </ul>
+      <b>References for <a href="../references.html#force_fields_gordon">Gordon</b></b> 
+      <ul>
+       <li><a href="../references.html#gordon_2006">Gordon 2006</a></li>
+      </ul>	
+      <b>Gordon in Towhee</b> 
+      <ul>
+        The official force field name for Gordon in Towhee is 'Gordon'.  Here I list all of 
+	the atom names for use in the towhee_input file, along with a brief description.
+	
+	Please note that the capitalization and spacing pattern is important 
+	and must be followed exactly as listed here.
+	<ul>
+          <li><b>'CH4n9'</b> : United-atom methane using a replulsive term of power 9.</li>
+          <li><b>'CH4n10'</b> : United-atom methane using a replulsive term of power 10.</li>
+          <li><b>'CH4n11'</b> : United-atom methane using a replulsive term of power 11.  This was found to give the best balance of vapor-liquid and viscosity predictions.</li>
+          <li><b>'CH4n12'</b> : United-atom methane using a replulsive term of power 12.</li>
+          <li><b>'CH4n18'</b> : United-atom methane using a replulsive term of power 18.</li>
+          <li><b>'CH4n40'</b> : United-atom methane using a replulsive term of power 40.</li>
+          <li><b>'CH3n14'</b> : United-atom methyl using a replulsive term of power 14.  Used for their n-alkane simuations.</li>
+          <li><b>'CH2n14'</b> : United-atom methylene using a replulsive term of power 20.  Used for their n-alkane simuations.</li>
+	</ul>
+      </ul>
+      <b>Coulombic interactions</b> 
+      <ul>
+        Coulombic terms were not used in this forcefield.
+      </ul>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->July 19, 2013<!-- #EndDate -->
+</font> <br>
+</body>
+</html>
+
+

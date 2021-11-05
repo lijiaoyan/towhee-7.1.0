@@ -1,0 +1,350 @@
+ MCCCS Towhee - Version 7.1.0   (July 25 2014)      
+ Copyright (C) <2014> Marcus G. Martin
+ Code Contributors for 2014: Marcus G. Martin;
+ Copyright (C) <2013> Marcus G. Martin
+ Code Contributors for 2013: Wesley Emeneker; Marcus G. Martin;
+ Copyright (C) <2012> Marcus G. Martin
+ Code Contributors for 2012: Marcus G. Martin;
+ Copyright (C) <2011> Marcus G. Martin
+ Code Contributors for 2011: Fred James; Marcus G. Martin; Suleiman Oloriegbe;
+ Copyright (C) <2010> Marcus G. Martin
+ Code Contributors for 2010: Rene Haber; Andrej Lajovic; Marcus G. Martin; Loukas Peristeras;
+ Copyright (C) <2009> Marcus G. Martin
+ Code Contributors for 2009: Rene Haber; Marcus G. Martin; Loukas Peristeras;
+ Copyright (C) <2008> Marcus G. Martin
+ Code Contributors for 2008: Rene Haber; Iyad A. Hijazi; Marcus G. Martin; Loukas Peristeras; Craig Tenney;
+ Copyright (C) <2007> Marcus G. Martin
+ Code Contributors for 2007: Bernhard Eckl; Frank Heilmann; Jianhui Li; Marcus G. Martin; Craig M. Tenney; Ozgur Yazaydin
+ Copyright (C) <2006> Marcus G. Martin
+ Code Contributors for 2006: Alan A. Chen; Arben Jusufi; Christian D. Lorenz; Marcus G. Martin; Jeffrey J. Potoff; Vincent K. Shen; Matthew A. Wyczalkowski; Ozgur Yazaydin
+ Copyright (C) <2005> Marcus G. Martin
+ Code Contributors for 2005: Marcus G. Martin; Alan A. Chen; Christian D. Lorenz; Matthew A. Wyczalkowski
+ Copyright (C) <2004> Marcus G. Martin
+ Code Contributors for 2004: Marcus G. Martin; Christian D. Lorenz; Peter A. Schultz; Aidan P. Thompson; Jeffrey J. Potoff; Steve R. Lustig; Paul S. Crozier; Nicholas du Preez
+ Copyright (C) <2003> Marcus G. Martin
+ Code Contributors for 2003: Marcus G. Martin; Christian D. Lorenz; David B. Ritch; Michael L. Greenfield; Yogesh Srivastava; Evangelos A Coutsias
+ Copyright (C) <2002> Marcus G. Martin
+ Code Contributors for 2002: Marcus G. Martin; Christian D. Lorenz; Aidan P. Thompson; Allen G. Sault
+ Copyright (C) <2000-2001> Marcus G. Martin
+ Copyright (C) <1999> J. Ilja Siepmann and Marcus G. Martin
+ Code Contributors for 1999: J. Ilja Siepmann; Marcus G. Martin; Bin Chen; Collin D. Wick; John Stubbs
+
+ Direct comments about this code to Marcus G. Martin (marcus_martin@users.sourceforge.net)
+ See the MCCCS Towhee web site for more information and the users manual.
+ http://towhee.sourceforge.net
+
+ We would like to thank the following agencies for providing funding used to develop MCCCS Towhee
+ -Department of Energy Industrial Technologies Program (MGM)
+ -National Science Foundation (JIS)
+ -Department of Energy Computational Science Graduate Fellowship (MGM,CDW)
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+ Reading from towhee_input file: towhee_input                                                                                                            
+ in directory: /towheebase/Examples/Canonical_Ensemble/Benzene_AA_autofit/                                                             
+ inputformat: Towhee         
+ ensemble: nvt                           
+ temperature:  300.000    
+ nmolty:            1
+ nmolectyp:            1
+ numboxes:            1
+ stepstyle: cycles  
+ nstep:          100
+ printfreq:           10
+ blocksize:           20
+ moviefreq:       100000
+ backupfreq:       100000
+ runoutput: none                
+No output of updates or block averages
+ pdb_output_freq:       100000
+ pressurefreq:      2000000
+ trmaxdispfreq:           10
+ volmaxdispfreq:         1000
+ potentialstyle: internal                      
+ ffnumber:            1
+ ff_filename:
+/towheebase/ForceFields/towhee_ff_Charmm27                                                                              
+ classical_potential: Lennard-Jones                 
+ READCLASSICAL: pot_num:     1 potential name: Lennard-Jones                 
+ classical_mixrule: Lorentz-Berthelot             
+ lshift:  F
+ ltailc:  T
+ rmin:  1.00000    
+ rcut:  10.0000    
+ rcutin:  10.0000    
+ electrostatic_form: coulomb                                           
+ coulombstyle: minimum image       
+ dielect:  1.00000    
+ Setting up force field parameters from files
+ opening forcefield file:    1
+ Lorentz-Berthelot Mixing rules
+ Arithmetic mean of sigma terms
+ Geometric mean of epsilon term
+ max_bond_length:  3.00000    
+ No solvation model used
+ linit:  F
+ initboxtype: dimensions          
+initstyle Box:    1
+ full cbmc           
+Box:  1 initlattice: simple cubic        
+Box:  1 initmol:         1
+Box:  1 inix,iniy,iniz:         1          1          1
+Box idim hmatrix:    1 1   30.00000    0.00000    0.00000
+Box idim hmatrix:    1 2    0.00000   30.00000    0.00000
+Box idim hmatrix:    1 3    0.00000    0.00000   30.00000
+ pmcb:  1.00000    
+ pmcbmt:  1.00000    
+ pmall:  1.00000    
+cbmc_analysis: normal                        
+cbmc_formulation: Martin and Frischknecht 2006                                
+ Coupled to pre-nonbond formulation from
+ M.G. Martin; A.L. Frischknecht; Mol. Phys. 104 2439-2456 (2006)
+cbmc_setting_style: explicit                      
+cbmc_fit_strategy: equilibrium                   
+ cbmc_nb_one_generation                            : uniform                       
+ nch_nb_one                                        :           10
+ nch_nb                                            :           10
+ nch_pre_nb                                        :           10
+cbmc_dihedral_generation: autofit gaussian              
+ Use individual gaussian distributions to generate torsions in config-bias
+ and correct this in the rosenbluth weights
+dihedral_sdev_multiplier:   1.00000
+ nch_tor                                           :           10
+ nch_tor_connect                                   :           10
+cbmc_bend_generation: autofit gaussian              
+ Use an individually defined gaussian distribution in configurational-bias
+ and correct this in the rosenbluth weights
+ Bend style A mean and standard deviation fit to cos(theta) exp(-beta U_bend)
+ Bend style B has multiple regions
+ Bend style B means and standard deviations fit exp(-beta U_bend)
+bend_a_sdev_multiplier:    1.00000
+bend_b_sdev_multiplier:    0.25000
+ nch_bend_a                                        :            1
+ nch_bend_b                                        :            1
+cbmc_bond_generation: autofit gaussian              
+ Use gaussian distribution to generate vibrations in config-bias
+    and correct this in the rosenbluth weights
+ mean and standard deviations from a gaussian to r^2 exp(-beta U_bond)
+bond_sdev_multiplier:   1.00000
+ nch_vib                                           :            1
+two_bond_fixed_endpoint_bias_style: analytic Boltzmann dihedral energy sum            
+three_bond_fixed_endpoint_bias_style: analytic using max and min 2-4 distance           
+ input_style: basic connectivity map                            
+ nunit:           12
+ nmaxcbmc:           12
+ lpdbnames:  F
+   using the Charmm27   force field
+ charge_assignment: manual                        
+   Building the input file for molecule type:     1
+unit:    1 name:CA         charge:  -0.11500
+unit:    2 name:CA         charge:  -0.11500
+unit:    3 name:CA         charge:  -0.11500
+unit:    4 name:CA         charge:  -0.11500
+unit:    5 name:CA         charge:  -0.11500
+unit:    6 name:CA         charge:  -0.11500
+unit:    7 name:HP         charge:   0.11500
+unit:    8 name:HP         charge:   0.11500
+unit:    9 name:HP         charge:   0.11500
+unit:   10 name:HP         charge:   0.11500
+unit:   11 name:HP         charge:   0.11500
+unit:   12 name:HP         charge:   0.11500
+ Verifying input structures are consistent
+Determining Arbitrary Trial Distribution Parameters: see towhee_cbmc for full details
+Determining cyclic subunits for molecule type          1
+Default total charge on molecule   1 is   0.00000
+Total charge in the simulation system:   0.00000
+Bond Types
+Type:     33 Style: Standard Harmonic Length: 1.3750 Constant:   153481.1
+Type:     58 Style: Standard Harmonic Length: 1.0800 Constant:   171093.6
+Angle Types
+Type:  75 Style: Charmm   Angle:    120.000 Constant:    20128.7
+          UB Length: 2.4162 Constant:    17612.6
+Type: 148 Style: Charmm   Angle:    120.000 Constant:    15096.5
+          UB Length: 2.1525 Constant:    11070.8
+Torsion Types
+Type:  34 Style: Amber/Charmm/Gromos Cosine Series n:   1
+          Index  1    k:    1560.0 m:2.0 d: 3.1415927
+          with 1-4 vdw and scaled (1.000) 1-4 coulomb
+Type:  63 Style: Amber/Charmm/Gromos Cosine Series n:   1
+          Index  1    k:    2113.5 m:2.0 d: 3.1415927
+          with 1-4 vdw and scaled (1.000) 1-4 coulomb
+Type:  64 Style: Amber/Charmm/Gromos Cosine Series n:   1
+          Index  1    k:    1207.7 m:2.0 d: 3.1415927
+          with 1-4 vdw and scaled (1.000) 1-4 coulomb
+Improper Torsion Types
+   No Improper Types
+Energies exclusively from internal potentials
+Nonbonded Force Field
+Lennard-Jones 12-6 potential
+    with tail corrections
+u(r) = 4*epsilon[(sigma/r)^12 - (sigma/r)^6] - shift
+Num. Atom(i)    Num. Atom(j)         sigma    epsilon      shift     1-4sig     1-4eps
+   3 CA            3 CA             3.5501    35.2252     0.0000     3.5501    35.2252
+   3 CA           86 HP             2.9850    23.0603     0.0000     2.9850    23.0603
+  86 HP           86 HP             2.4200    15.0965     0.0000     2.4200    15.0965
+ Canonical ensemble
+ 3-dimensional periodic box
+ Additional Center-of-Mass cutoff
+ Dual Cutoff Configurational-bias Monte Carlo
+ Coupled-decoupled Configurational-bias MC
+ Coulombic inter- and intra-molecular interactions
+     including the real-space terms up to half the shortest box length
+
+Molecular mass for molecule type     1 is    78.0480 g/mol
+ Reading in initial conformation from towhee_inital
+Initial version:    4
+Selected random number generator DX-1597-2-7 and single integer seed    1302002
+Testing random number generator using the single integer seed
+    0.812479  0.687663  0.080298  0.200888  0.516914
+10 million RNG sum (approximately 5 million):   4999978.2264809748
+ new maximum displacements read from towhee_initial
+box:     1
+molecule type:     1
+ Max displacement for Atom translate:   0.090703
+ Max displacement for COM translate:   0.500000
+ Max displacement for rotation:   0.050000
+ Max disp. for unit cell perturbation
+
+ new box dimensions read from towhee_initial
+ Box  1 hmatrix(1,x):       30.00000       0.00000       0.00000
+ Box  1 hmatrix(2,x):        0.00000      30.00000       0.00000
+ Box  1 hmatrix(3,x):        0.00000       0.00000      30.00000
+
+
+Number of MC cycles:                  100
+Number of molecules:                    1
+Temperature [K]:       300.00000
+
+Initial Energies for Box     1
+Total molecules in this box          1
+Molecules of type   1 :          1
+ total vibration         2489.941 [K]         4.94805 [kcal/mol]
+    regular              2489.941 [K]         4.94805 [kcal/mol]
+    bond-bond(1-2)          0.000 [K]         0.00000 [kcal/mol]
+ total angle             1674.567 [K]         3.32773 [kcal/mol]
+    regular              1674.567 [K]         3.32773 [kcal/mol]
+    angle-angle             0.000 [K]         0.00000 [kcal/mol]
+ total torsion           6034.992 [K]        11.99283 [kcal/mol]
+    regular              6034.992 [K]        11.99283 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond           -107.354 [K]        -0.21334 [kcal/mol]
+    intramolecular       -106.169 [K]        -0.21098 [kcal/mol]
+    2-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+    3-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+    tail correct.          -1.185 [K]        -0.00236 [kcal/mol]
+ total coulombic         1028.439 [K]         2.04373 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical             11120.5852 [K]            22.099003 [kcal/mol]
+ initial virial pressure in box  1 =         152.20
+
+ +++++ start of markov chain +++++
+
+Cycle      Box   Energy [K]  Volume [A^3] Press. [kPa] Molecules
+        10 B: 1  0.1112E+05  0.2700E+05        152.2     1
+        20 B: 1  0.1112E+05  0.2700E+05        152.2     1
+        30 B: 1  0.1112E+05  0.2700E+05        152.2     1
+        40 B: 1  0.1112E+05  0.2700E+05        152.2     1
+        50 B: 1  0.1112E+05  0.2700E+05        152.2     1
+        60 B: 1  0.9156E+04  0.2700E+05        152.2     1
+        70 B: 1  0.9156E+04  0.2700E+05        152.2     1
+        80 B: 1  0.1002E+05  0.2700E+05        152.2     1
+        90 B: 1  0.1002E+05  0.2700E+05        152.2     1
+       100 B: 1  0.1002E+05  0.2700E+05        152.2     1
+
+ +++++ end of markov chain +++++
+
+ Final hmatrix (general box dimensions) 
+Box:     1
+  hmatrix(1,x)      30.00000       0.00000       0.00000
+  hmatrix(2,x)       0.00000      30.00000       0.00000
+  hmatrix(3,x)       0.00000       0.00000      30.00000
+
+* Configurational-Bias REGROWTH Moves *
+ Molecule type:    1 Box:    1
+     Length  Attempts  Regrown  Accepted  %Regrown   %Accep.
+       11       100       100         2    100.00      2.00
+
+Final Energies for Box     1
+Total molecules in this box          1
+Molecules of type   1 :          1
+ total vibration         1764.443 [K]         3.50633 [kcal/mol]
+    regular              1764.443 [K]         3.50633 [kcal/mol]
+    bond-bond(1-2)          0.000 [K]         0.00000 [kcal/mol]
+ total angle              680.483 [K]         1.35227 [kcal/mol]
+    regular               680.483 [K]         1.35227 [kcal/mol]
+    angle-angle             0.000 [K]         0.00000 [kcal/mol]
+ total torsion           6674.224 [K]        13.26312 [kcal/mol]
+    regular              6674.224 [K]        13.26312 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond           -104.753 [K]        -0.20817 [kcal/mol]
+    intramolecular       -103.567 [K]        -0.20581 [kcal/mol]
+    2-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+    3-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+    tail correct.          -1.185 [K]        -0.00236 [kcal/mol]
+ total coulombic         1006.360 [K]         1.99986 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical             10020.7572 [K]            19.913408 [kcal/mol]
+Averages               Units Type       Box  1
+ Volume                 nm^3       0.27000E+02
+ Volume^2               nm^6       0.72900E+03
+ Molecule Number                1        1.000
+ Molar Volume         ml/mol       0.16260E+05
+ Specific Density       g/ml        0.00480014
+ Number Density         nm-3    1      0.03704
+ Mole Fraction                  1    1.0000000
+ Radius of Gyration        A    1    1.5162517
+ Ideal Pressure          kPa       0.15345E+03
+ Ideal p_i <N/V>kT       kPa    1  0.15345E+03
+ Total Classical           K        0.1037E+05
+ Inter vdw                 K       -0.1185E+01
+ Angle                     K        0.1303E+04
+ Torsion                   K        0.6064E+04
+ Intra vdw                 K       -0.1052E+03
+ External Field            K        0.0000E+00
+ Vibration                 K        0.2093E+04
+ Coulomb                   K        0.1020E+04
+ Tail vdw                  K       -0.1185E+01
+ Solvation                 K        0.0000E+00
+ G: Sum{<u_i><N_i>}   kJ/mol        0.0000E+00
+ U                    kJ/mol        0.8625E+02
+ C_v: T^2<H^2>-<H>^2 J/K mol        0.6202E+02
+
+Block Averages (  5 blocks) Units Type Box Average      Standard Deviation
+ Specific Density            g/ml        1  0.48001E-02  0.00000E+00
+ Total Classical                K        1  0.10374E+05  0.67258E+03
+ Inter vdw                      K        1 -0.11854E+01  0.00000E+00
+ Angle                          K        1  0.13029E+04  0.38780E+03
+ Torsion                        K        1  0.60644E+04  0.32417E+03
+ Intra vdw                      K        1 -0.10520E+03  0.10145E+01
+ External Field                 K        1  0.00000E+00  0.00000E+00
+ Vibration                      K        1  0.20929E+04  0.35584E+03
+ Coulomb                        K        1  0.10203E+04  0.85831E+01
+ Tail vdw                       K        1 -0.11854E+01  0.00000E+00
+ Solvation                      K        1  0.00000E+00  0.00000E+00
+ Number Density              nm-3    1   1  0.37037E-01  0.00000E+00
+ Mole Fraction                       1   1    1.0000000    0.0000000
+ Molarity                       M    1   1  0.61523E-01  0.00000E+00
+ Radius of Gyration             A    1   1      1.51625      0.00024
+
+ -----block averages ------
+Box:    1
+Block Energy         Density        Virial Press.  Mol fracs
+    1 0.11120585E+05 0.48001413E-02 0.00000000E+00 1.00000000
+    2 0.11120585E+05 0.48001413E-02 0.00000000E+00 1.00000000
+    3 0.10236603E+05 0.48001413E-02 0.00000000E+00 1.00000000
+    4 0.93723237E+04 0.48001413E-02 0.00000000E+00 1.00000000
+    5 0.10020757E+05 0.48001413E-02 0.00000000E+00 1.00000000
+Please see towhee_citations for a list of suggested citations for this simulation

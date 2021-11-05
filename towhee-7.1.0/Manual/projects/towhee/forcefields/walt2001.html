@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>MCCCS Towhee (Walt2001)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (Walther <i>et al.</i> 2001)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers the Walther <i>et al.</i> (Walt2001) force field as it is implemented into 
+	the towhee_ff_Walt2001 file in the ForceFields directory.  This force field was originally 
+	designed for fluid simulations of water and carbon nanotubes.
+	Note that this is a Lennard-Jones force field that uses explicit mixing rules so it is
+	not easily combined with other force fields.
+	Any discrepencies (especially typos) from the published values are the sole responsibility
+	of Marcus G. Martin, and I welcome feedback on how this implementation compares
+	with other programs.
+      </ul>
+
+      <b>References for Walt2001</b> 
+      <ul>
+        What I term Walt2001 is described in the following paper.
+	<ul>
+	  <li><a href="../references.html#walther_et_al_2001">Walther <i>et al.</i> 2001</a></li>
+	</ul>
+      </ul>	
+
+      <b>Typos and comments for Walt2001</b> 
+      <ul>
+        There are some typos in the Walt2001 paper.  Here I list places where my implementation does 
+	not completely agree with what is written in the Walt2001 paper.
+        <ul>
+	  <li>Table 1 of <a href="../references.html#walther_et_al_2001">Walther <i>et al.</i> 2001</a> 
+	    lists no values for the angle force constant and two for the torsional force constant.  
+	    This implementation assumes that the second of these values (25.12 kJ mol<sup>-1</sup>) is 
+	    the torsional force constant, while the first value (562.2 kJ mol<sup>-1</sup>) is 
+	    the angle force constant.
+	  </li>
+	  <li>Table 2 of <a href="../references.html#walther_et_al_2001">Walther <i>et al.</i> 2001</a> 
+	    lists a charge of -0.41 e for the hydrogen atom in water.  This implemenation assumes they 
+	    really meant a charge of +0.41 e for the hydrogen atom in water.
+	  </li>
+	</ul>
+      </ul>
+
+      <b>Walt2001 in Towhee</b> 
+      <ul>
+        The official force field name for Walther <i>et al.</i> 2001 in Towhee is 'Walt2001'.  Here I list all of 
+	the atom names for use in the towhee_input file, along with a brief description.  I created these
+	atom names in order to work with the molecule assembler.
+	
+	Please note that the capitalization and spacing pattern is important 
+	and must be followed exactly as listed here.
+	<ul>
+          <li><b>'C'</b> : Carbon in a carbon nanotube.</li>
+          <li><b>'O'</b> : Oxygen in water.</li>
+          <li><b>'H'</b> : Hydrogen in water.</li>
+	</ul>
+      </ul>
+      <b>Coulombic interactions</b> 
+      <ul>
+        This force field assigns coulombic interactions to the water molecules.  In the original paper 
+	they also used quadrupole moments on the carbon atoms, but they found these had no significant 
+	effect on the results and so the quadrupole moment is not included in this implementation.
+	The 'bond increment' method of <b>charge_assignment</b> is implemented for this forcefield.
+	Please see the <a href="../inpstyle/inpstyle_2.html">inpstyle 2</a> documentation for 
+	further information on enabling this option.  Otherwise, you are welcome to manually set the charges.  Here I 
+	list the charges transfered between atom pairs as assigned by the 'bond increment' method.
+	<ul>
+	  <li><font color="green">O</font> - <font color="green">H</font>: -0.41</li>
+	  <li><font color="green">C</font> - <font color="green">C</font>: 0.0</li>
+	</ul>
+      </ul>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->September 07, 2005<!-- #EndDate -->
+</font> <br>
+</body>
+</html>
+
+

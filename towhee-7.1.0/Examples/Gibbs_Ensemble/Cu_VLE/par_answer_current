@@ -1,0 +1,452 @@
+ MCCCS Towhee - Version 7.1.0   (July 25 2014)      
+ Copyright (C) <2014> Marcus G. Martin
+ Code Contributors for 2014: Marcus G. Martin;
+ Copyright (C) <2013> Marcus G. Martin
+ Code Contributors for 2013: Wesley Emeneker; Marcus G. Martin;
+ Copyright (C) <2012> Marcus G. Martin
+ Code Contributors for 2012: Marcus G. Martin;
+ Copyright (C) <2011> Marcus G. Martin
+ Code Contributors for 2011: Fred James; Marcus G. Martin; Suleiman Oloriegbe;
+ Copyright (C) <2010> Marcus G. Martin
+ Code Contributors for 2010: Rene Haber; Andrej Lajovic; Marcus G. Martin; Loukas Peristeras;
+ Copyright (C) <2009> Marcus G. Martin
+ Code Contributors for 2009: Rene Haber; Marcus G. Martin; Loukas Peristeras;
+ Copyright (C) <2008> Marcus G. Martin
+ Code Contributors for 2008: Rene Haber; Iyad A. Hijazi; Marcus G. Martin; Loukas Peristeras; Craig Tenney;
+ Copyright (C) <2007> Marcus G. Martin
+ Code Contributors for 2007: Bernhard Eckl; Frank Heilmann; Jianhui Li; Marcus G. Martin; Craig M. Tenney; Ozgur Yazaydin
+ Copyright (C) <2006> Marcus G. Martin
+ Code Contributors for 2006: Alan A. Chen; Arben Jusufi; Christian D. Lorenz; Marcus G. Martin; Jeffrey J. Potoff; Vincent K. Shen; Matthew A. Wyczalkowski; Ozgur Yazaydin
+ Copyright (C) <2005> Marcus G. Martin
+ Code Contributors for 2005: Marcus G. Martin; Alan A. Chen; Christian D. Lorenz; Matthew A. Wyczalkowski
+ Copyright (C) <2004> Marcus G. Martin
+ Code Contributors for 2004: Marcus G. Martin; Christian D. Lorenz; Peter A. Schultz; Aidan P. Thompson; Jeffrey J. Potoff; Steve R. Lustig; Paul S. Crozier; Nicholas du Preez
+ Copyright (C) <2003> Marcus G. Martin
+ Code Contributors for 2003: Marcus G. Martin; Christian D. Lorenz; David B. Ritch; Michael L. Greenfield; Yogesh Srivastava; Evangelos A Coutsias
+ Copyright (C) <2002> Marcus G. Martin
+ Code Contributors for 2002: Marcus G. Martin; Christian D. Lorenz; Aidan P. Thompson; Allen G. Sault
+ Copyright (C) <2000-2001> Marcus G. Martin
+ Copyright (C) <1999> J. Ilja Siepmann and Marcus G. Martin
+ Code Contributors for 1999: J. Ilja Siepmann; Marcus G. Martin; Bin Chen; Collin D. Wick; John Stubbs
+
+ Direct comments about this code to Marcus G. Martin (marcus_martin@users.sourceforge.net)
+ See the MCCCS Towhee web site for more information and the users manual.
+ http://towhee.sourceforge.net
+
+ We would like to thank the following agencies for providing funding used to develop MCCCS Towhee
+ -Department of Energy Industrial Technologies Program (MGM)
+ -National Science Foundation (JIS)
+ -Department of Energy Computational Science Graduate Fellowship (MGM,CDW)
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+ Reading from towhee_input file: towhee_input                                                                                                            
+ in directory: /towheebase/Examples/Gibbs_Ensemble/Cu_VLE/                                                                             
+ inputformat: Towhee         
+ ensemble: nvt                           
+ temperature:  3000.00    
+ nmolty:            1
+ nmolectyp:          300
+ numboxes:            2
+ stepstyle: cycles  
+ nstep:           10
+ printfreq:            1
+ blocksize:          200
+ moviefreq:       100000
+ backupfreq:         1000
+ runoutput: full                
+Full output of updates and block averages
+ pdb_output_freq:           10
+ pressurefreq:           20
+ trmaxdispfreq:            1
+ volmaxdispfreq:         1000
+ chempotperstep:           10
+ potentialstyle: internal                      
+ ffnumber:            1
+ ff_filename:
+/towheebase/ForceFields/towhee_ff_Hoyt2003                                                                              
+ classical_potential: Embedded Atom Method          
+ READCLASSICAL: pot_num:   111 potential name: Embedded Atom Method          
+ interpolatestyle: cubicspline         
+ Tables interpolated using cubic splines
+ rcut:  1.00000    
+ electrostatic_form: none                                              
+ Setting up force field parameters from files
+ opening forcefield file:    1
+ Explicit declaration of Cross Terms
+ Please check the forcefield file carefully
+default max_bond_length:  3.00
+ No solvation model used
+ linit:  T
+ initboxtype: dimensions          
+initstyle Box:    1
+ full cbmc           
+initstyle Box:    2
+ full cbmc           
+Box:  1 initlattice: simple cubic        
+Box:  2 initlattice: simple cubic        
+Box:  1 initmol:       200
+Box:  2 initmol:       100
+Box:  1 inix,iniy,iniz:         6          6          6
+Box:  2 inix,iniy,iniz:         5          5          5
+Box idim hmatrix:    1 1   15.00000    0.00000    0.00000
+Box idim hmatrix:    1 2    0.00000   15.00000    0.00000
+Box idim hmatrix:    1 3    0.00000    0.00000   15.00000
+Box idim hmatrix:    2 1  100.00000    0.00000    0.00000
+Box idim hmatrix:    2 2    0.00000  100.00000    0.00000
+Box idim hmatrix:    2 3    0.00000    0.00000  100.00000
+itest:  1 pairbox:  1   2
+ pmvol: 0.100000E-01
+ pmvlpr:  1.00000    
+ rmvol: 0.100000    
+ tavol: 0.500000    
+ pm2boxrbswap: 0.100000    
+ pm2rbswmt:  1.00000    
+ pm2rbswpr:  1.00000    
+ pm2boxcbswap: 0.200000    
+ pm2cbswmt:  1.00000    
+ pm2cbswpr:  1.00000    
+ pm1boxcbswap: 0.300000    
+ pm1cbswmt:  1.00000    
+ pmavb1: 0.400000    
+ pmavb1in: 0.500000    
+ pmavb1mt:  1.00000    
+moltyp:  1 pmavb1ct: 1.000000
+ avb1rad:  5.00000    
+ pmavb2: 0.500000    
+ pmavb2in: 0.500000    
+ pmavb2mt:  1.00000    
+moltyp:  1 pmavb2ct: 1.000000
+ avb2rad:  5.00000    
+ pmavb3: 0.600000    
+ pmavb3mt:  1.00000    
+moltyp:  1 pmavb3ct: 1.000000
+ avb3rad:  5.00000    
+ pmplane:  0.00000    
+ pmplanebox: 0.500000     1.00000    
+ planewidth:  3.00000    
+ pmrow:  0.00000    
+ pmrowbox: 0.500000     1.00000    
+ rowwidth:  3.00000    
+ pmtracm:  1.00000    
+ pmtcmt:  1.00000    
+ rmtrac: 0.500000    
+ tatrac: 0.500000    
+cbmc_analysis: normal                        
+cbmc_formulation: Martin and Frischknecht 2006                                
+ Coupled to pre-nonbond formulation from
+ M.G. Martin; A.L. Frischknecht; Mol. Phys. 104 2439-2456 (2006)
+cbmc_setting_style: widom ideal                   
+ input_style: basic connectivity map                            
+ nunit:            1
+ nmaxcbmc:            1
+ lpdbnames:  F
+   using the Hoyt2003   force field
+ charge_assignment: manual                        
+   Building the input file for molecule type:     1
+unit:    1 name:Cu         charge:   0.00000
+ Verifying input structures are consistent
+Determining Arbitrary Trial Distribution Parameters: see towhee_cbmc for full details
+Determining cyclic subunits for molecule type          1
+Default total charge on molecule   1 is   0.00000
+Total charge in the simulation system:   0.00000
+Bond Types
+   No Bond Types
+Angle Types
+   No Angle Types
+Torsion Types
+   No Torsion Types
+Improper Torsion Types
+   No Improper Types
+SETCLASSICAL: adjusted rcut to be the maximum distance from tabulated potential
+New rcut value is    5.76565
+Energies exclusively from internal potentials
+Nonbonded Force Field
+Embedded-Atom potential
+U = eam_pair(r) + eam_embed[ Sum[eam_dens(r)] ]
+Num. Atom(i)    Num. Atom(j)    eam_dens(r) style
+   2 Cu            2 Cu         table               
+Num. Atom(i)    Num. Atom(j)    eam_pair(r) style
+   2 Cu            2 Cu         table               
+Num. Atom(i)                    eam_embed(rho) style
+   2 Cu                         table               
+ Canonical Gibbs ensemble
+ 3-dimensional periodic box
+ Additional Center-of-Mass cutoff
+ Coupled-decoupled Configurational-bias MC
+
+Molecular mass for molecule type     1 is    63.5500 g/mol
+ Calling initconf
+Selected random number generator DX-1597-2-7 and single integer seed    1302002
+Testing random number generator using the single integer seed
+    0.812479  0.687663  0.080298  0.200888  0.516914
+10 million RNG sum (approximately 5 million):   4999978.2264809748
+Box idim hinverse:    1 1    0.06667    0.00000    0.00000
+Box idim hinverse:    1 2    0.00000    0.06667    0.00000
+Box idim hinverse:    1 3    0.00000    0.00000    0.06667
+Box idim hinverse:    2 1    0.01000    0.00000    0.00000
+Box idim hinverse:    2 2    0.00000    0.01000    0.00000
+Box idim hinverse:    2 3    0.00000    0.00000    0.01000
+INITCONF: building template for molecule type:    1
+Initial Structure Growth Trial:    1
+
+Number of MC cycles:                   10
+Number of molecules:                  300
+Temperature [K]:      3000.00000
+
+Initial Energies for Box     1
+Total molecules in this box        200
+Molecules of type   1 :        200
+ total vibration            0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    bond-bond(1-2)          0.000 [K]         0.00000 [kcal/mol]
+ total angle                0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    angle-angle             0.000 [K]         0.00000 [kcal/mol]
+ total torsion              0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond       -6883073.785 [K]    -13678.15327 [kcal/mol]
+    intramolecular          0.000 [K]         0.00000 [kcal/mol]
+    2-body nonbond    3389021.998 [K]      6734.71821 [kcal/mol]
+    3-body nonbond  -10272095.783 [K]    -20412.87148 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical          -6883073.7848 [K]        -13678.153274 [kcal/mol]
+ Total energy [eV] -593.141    
+Initial Energies for Box     2
+Total molecules in this box        100
+Molecules of type   1 :        100
+ total vibration            0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    bond-bond(1-2)          0.000 [K]         0.00000 [kcal/mol]
+ total angle                0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    angle-angle             0.000 [K]         0.00000 [kcal/mol]
+ total torsion              0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond              0.000 [K]         0.00000 [kcal/mol]
+    intramolecular          0.000 [K]         0.00000 [kcal/mol]
+    2-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+    3-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical             0.00000000 [K]         0.0000000000 [kcal/mol]
+ Total energy [eV]  0.00000    
+
+ +++++ start of markov chain +++++
+
+Cycle      Box   Energy [K]  Volume [A^3] Press. [kPa] Molecules
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             81.        46.   0.567901
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             50.        49.   0.980000
+         1 B: 1 -0.7008E+07  0.3088E+04          0.0   201
+           B: 2 -0.6803E+05  0.1000E+07          0.0    99
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             85.        45.   0.601307
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             43.        39.   1.777674
+         2 B: 1 -0.7079E+07  0.3088E+04          0.0   204
+           B: 2 -0.9938E+05  0.1000E+07          0.0    96
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             81.        47.   0.697813
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             39.        35.   3.190698
+         3 B: 1 -0.7049E+07  0.3088E+04          0.0   204
+           B: 2 -0.2096E+06  0.1000E+07          0.0    96
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             76.        31.   0.569269
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             30.        28.   5.955969
+         4 B: 1 -0.7029E+07  0.3088E+04          0.0   204
+           B: 2 -0.2285E+06  0.1000E+07          0.0    96
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             84.        43.   0.582823
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             29.        22.   9.036643
+         5 B: 1 -0.6997E+07  0.3088E+04          0.0   204
+           B: 2 -0.2973E+06  0.1000E+07          0.0    96
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             79.        42.   0.619710
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             29.        19.  11.531302
+         6 B: 1 -0.6962E+07  0.3088E+04          0.0   204
+           B: 2 -0.3849E+06  0.1000E+07          0.0    96
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             95.        61.   0.795838
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             33.        25.  11.531302
+         7 B: 1 -0.6926E+07  0.3088E+04          0.0   204
+           B: 2 -0.4138E+06  0.1000E+07          0.0    96
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             79.        27.   0.543991
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             35.        25.  11.531302
+         8 B: 1 -0.6900E+07  0.3153E+04          0.0   204
+           B: 2 -0.4685E+06  0.1000E+07          0.0    96
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             86.        44.   0.556642
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             39.        20.  11.531302
+         9 B: 1 -0.6884E+07  0.3193E+04          0.0   205
+           B: 2 -0.5182E+06  0.1000E+07          0.0    95
+              Updating maximum translational/rotational displacements
+ Box: 1 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             69.        38.   0.613113
+ Box: 2 Molecule:  1  Attempts   Accepted   New Displacement
+ Translate COM             32.        21.  11.531302
+        10 B: 1 -0.6899E+07  0.3193E+04          0.0   206
+           B: 2 -0.5536E+06  0.1000E+07          0.0    94
+
+ +++++ end of markov chain +++++
+
+ Final hmatrix (general box dimensions) 
+Box:     1
+  hmatrix(1,x)      14.72605       0.00000       0.00000
+  hmatrix(2,x)       0.00000      14.72605       0.00000
+  hmatrix(3,x)       0.00000       0.00000      14.72605
+Box:     2
+  hmatrix(1,x)     100.00605       0.00000       0.00000
+  hmatrix(2,x)       0.00000     100.00605       0.00000
+  hmatrix(3,x)       0.00000       0.00000     100.00605
+
+* 3D Volume Change Moves *
+ Box  1 and  2 Tries:       22 Accepted:        4 Acp. Ratio:  0.182 Max Disp.: 0.100E+00
+
+* Rotational-Bias SWAP Moves *
+ Molecule type:           1
+  From box  2 to box  1 Attempted:     135 Accepted:       2
+  From box  1 to box  2 Attempted:     143 Accepted:       2
+
+* Configurational-Bias SWAP Moves *
+Molecule type:     1
+  From box  1 to box  1 Attempted:     150 Grown:     150 Accepted:       1
+  From box  2 to box  1 Attempted:     159 Grown:     159 Accepted:       6
+  From box  1 to box  2 Attempted:     151 Grown:     151 Accepted:       0
+  From box  2 to box  2 Attempted:     155 Grown:     155 Accepted:     103
+
+* Aggregation-Volume-Bias-1 Moves *
+ Box Moved Around From To  Attempted  Accepted  Percent
+   1     1      1   in  in        10         0     0.00
+   1     1      1   in out        12         0     0.00
+   1     1      1  out  in        73         0     0.00
+   1     1      1  out out        81         1     1.23
+ Box Moved Around From To  Attempted  Accepted  Percent
+   2     1      1  out  in        78         4     5.13
+   2     1      1  out out        59        49    83.05
+
+* Aggregation-Volume-Bias-2 Moves 
+ Box Moved Around From To  Attempted  Accepted  Percent
+   1     1      1   in out        71         0     0.00
+   1     1      1  out  in        74         0     0.00
+ Box Moved Around From To  Attempted  Accepted  Percent
+   2     1      1   in out        69         3     4.35
+   2     1      1  out  in        84        22    26.19
+
+* Aggregation-Volume-Bias-3 Moves 
+ Box Moved Around Attempted  Accepted  Percent
+   1     1     1       150         0     0.00
+ Box Moved Around Attempted  Accepted  Percent
+   2     1     1       150        10     6.67
+
+* COM Translation Moves *
+Molecule:  1 Box: 1 Attempts:            815. Accepted:            424. Accepted:  52.025 %
+Molecule:  1 Box: 2 Attempts:            359. Accepted:            283. Accepted:  78.830 %
+
+Final Energies for Box     1
+Total molecules in this box        206
+Molecules of type   1 :        206
+ total vibration            0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    bond-bond(1-2)          0.000 [K]         0.00000 [kcal/mol]
+ total angle                0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    angle-angle             0.000 [K]         0.00000 [kcal/mol]
+ total torsion              0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond       -6898782.135 [K]    -13709.36916 [kcal/mol]
+    intramolecular          0.000 [K]         0.00000 [kcal/mol]
+    2-body nonbond    4711171.715 [K]      9362.11507 [kcal/mol]
+    3-body nonbond  -11609953.850 [K]    -23071.48423 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical          -6898782.1352 [K]        -13709.369157 [kcal/mol]
+ Total energy [eV] -594.495    
+Final Energies for Box     2
+Total molecules in this box         94
+Molecules of type   1 :         94
+ total vibration            0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    bond-bond(1-2)          0.000 [K]         0.00000 [kcal/mol]
+ total angle                0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    angle-angle             0.000 [K]         0.00000 [kcal/mol]
+ total torsion              0.000 [K]         0.00000 [kcal/mol]
+    regular                 0.000 [K]         0.00000 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond        -553595.944 [K]     -1100.11463 [kcal/mol]
+    intramolecular          0.000 [K]         0.00000 [kcal/mol]
+    2-body nonbond     249866.734 [K]       496.53913 [kcal/mol]
+    3-body nonbond    -803462.678 [K]     -1596.65376 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical           -553595.9437 [K]         -1100.114630 [kcal/mol]
+ Total energy [eV] -47.7055    
+Averages               Units Type       Box  1      Box  2
+ Volume                 nm^3       0.31347E+01 0.10002E+04
+ Volume^2               nm^6       0.98343E+01 0.10005E+07
+ Molecule Number                1      203.741      96.259
+ Molar Volume         ml/mol       0.92579E+01 0.62576E+04
+ Specific Density       g/ml        6.86437927  0.01015571
+ Number Density         nm-3    1     65.04737     0.09624
+ Mole Fraction                  1    1.0000000   1.0000000
+ Radius of Gyration        A    1    0.0000000   0.0000000
+ Ideal Pressure          kPa       0.26950E+07 0.39873E+04
+ Ideal p_i <N/V>kT       kPa    1  0.26950E+07 0.39873E+04
+ -<dU/dV>                kPa       -.25578E+07 -.13757E+04
+ Thermodynamic Pressure  kPa       0.13722E+06 0.26115E+04
+ Thermo p_i <x_1><p_t>   kPa    1  0.13722E+06 0.26115E+04
+ Total Classical           K       -0.6971E+07 -0.3016E+06
+ Inter vdw                 K       -0.6971E+07 -0.3016E+06
+ Angle                     K        0.0000E+00  0.0000E+00
+ Torsion                   K        0.0000E+00  0.0000E+00
+ Intra vdw                 K        0.0000E+00  0.0000E+00
+ External Field            K        0.0000E+00  0.0000E+00
+ Vibration                 K        0.0000E+00  0.0000E+00
+ Coulomb                   K        0.0000E+00  0.0000E+00
+ Tail vdw                  K        0.0000E+00  0.0000E+00
+ Solvation                 K        0.0000E+00  0.0000E+00
+ u (Density)               K    1   -37174.056  -56719.808
+ u (NVT Insertion)         K    1   -26388.016  -11849.674
+ u (NpT Insertion)         K    1   -26356.977  -11849.812
+ u (Den. + NVT Insert)     K    1   -63562.072  -68569.482
+ u (Den. + NpT Insert)     K    1   -63531.033  -68569.620
+ u (Gibbs Total)           K    1   -63545.691  -68546.607
+ G: Sum{<u_i><N_i>}   kJ/mol       -0.1076E+06 -0.5486E+05
+ U                    kJ/mol       -0.5795E+05 -0.2508E+04
+ H_vap (pV/n=RT)      kJ/mol        0.2832E+03
+ H_vap (thermo p)     kJ/mol        0.2747E+03
+Please see towhee_citations for a list of suggested citations for this simulation

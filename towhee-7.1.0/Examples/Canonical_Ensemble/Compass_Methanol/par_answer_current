@@ -1,0 +1,313 @@
+ MCCCS Towhee - Version 7.1.0   (July 25 2014)      
+ Copyright (C) <2014> Marcus G. Martin
+ Code Contributors for 2014: Marcus G. Martin;
+ Copyright (C) <2013> Marcus G. Martin
+ Code Contributors for 2013: Wesley Emeneker; Marcus G. Martin;
+ Copyright (C) <2012> Marcus G. Martin
+ Code Contributors for 2012: Marcus G. Martin;
+ Copyright (C) <2011> Marcus G. Martin
+ Code Contributors for 2011: Fred James; Marcus G. Martin; Suleiman Oloriegbe;
+ Copyright (C) <2010> Marcus G. Martin
+ Code Contributors for 2010: Rene Haber; Andrej Lajovic; Marcus G. Martin; Loukas Peristeras;
+ Copyright (C) <2009> Marcus G. Martin
+ Code Contributors for 2009: Rene Haber; Marcus G. Martin; Loukas Peristeras;
+ Copyright (C) <2008> Marcus G. Martin
+ Code Contributors for 2008: Rene Haber; Iyad A. Hijazi; Marcus G. Martin; Loukas Peristeras; Craig Tenney;
+ Copyright (C) <2007> Marcus G. Martin
+ Code Contributors for 2007: Bernhard Eckl; Frank Heilmann; Jianhui Li; Marcus G. Martin; Craig M. Tenney; Ozgur Yazaydin
+ Copyright (C) <2006> Marcus G. Martin
+ Code Contributors for 2006: Alan A. Chen; Arben Jusufi; Christian D. Lorenz; Marcus G. Martin; Jeffrey J. Potoff; Vincent K. Shen; Matthew A. Wyczalkowski; Ozgur Yazaydin
+ Copyright (C) <2005> Marcus G. Martin
+ Code Contributors for 2005: Marcus G. Martin; Alan A. Chen; Christian D. Lorenz; Matthew A. Wyczalkowski
+ Copyright (C) <2004> Marcus G. Martin
+ Code Contributors for 2004: Marcus G. Martin; Christian D. Lorenz; Peter A. Schultz; Aidan P. Thompson; Jeffrey J. Potoff; Steve R. Lustig; Paul S. Crozier; Nicholas du Preez
+ Copyright (C) <2003> Marcus G. Martin
+ Code Contributors for 2003: Marcus G. Martin; Christian D. Lorenz; David B. Ritch; Michael L. Greenfield; Yogesh Srivastava; Evangelos A Coutsias
+ Copyright (C) <2002> Marcus G. Martin
+ Code Contributors for 2002: Marcus G. Martin; Christian D. Lorenz; Aidan P. Thompson; Allen G. Sault
+ Copyright (C) <2000-2001> Marcus G. Martin
+ Copyright (C) <1999> J. Ilja Siepmann and Marcus G. Martin
+ Code Contributors for 1999: J. Ilja Siepmann; Marcus G. Martin; Bin Chen; Collin D. Wick; John Stubbs
+
+ Direct comments about this code to Marcus G. Martin (marcus_martin@users.sourceforge.net)
+ See the MCCCS Towhee web site for more information and the users manual.
+ http://towhee.sourceforge.net
+
+ We would like to thank the following agencies for providing funding used to develop MCCCS Towhee
+ -Department of Energy Industrial Technologies Program (MGM)
+ -National Science Foundation (JIS)
+ -Department of Energy Computational Science Graduate Fellowship (MGM,CDW)
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+ Reading from towhee_input file: towhee_input                                                                                                            
+ in directory: /towheebase/Examples/Canonical_Ensemble/Compass_Methanol/                                                               
+ inputformat: Towhee         
+ ensemble: nvt                           
+ temperature:  300.000    
+ nmolty:            1
+ nmolectyp:            1
+ numboxes:            1
+ stepstyle: cycles  
+ nstep:            0
+ printfreq:            1
+ blocksize:         2000
+ moviefreq:       100000
+ backupfreq:         1000
+ runoutput: full                
+Full output of updates and block averages
+ pdb_output_freq:           10
+ pressurefreq:           20
+ trmaxdispfreq:         1000
+ volmaxdispfreq:         1000
+ potentialstyle: internal                      
+ ffnumber:            1
+ ff_filename:
+/towheebase/ForceFields/towhee_ff_COMPASSv1                                                                             
+ classical_potential: 9-6                           
+ READCLASSICAL: pot_num:     6 potential name: 9-6                           
+ classical_mixrule: Sixth Power                   
+ lshift:  F
+ ltailc:  F
+ rmin:  1.00000    
+ rcut:  20.0000    
+ rcutin:  10.0000    
+ electrostatic_form: coulomb                                           
+ coulombstyle: minimum image       
+ dielect:  1.00000    
+ Setting up force field parameters from files
+ opening forcefield file:    1
+ Sixth Power Mixing rules
+ Sixth order combination of sigma
+ Sixth order combination of epsilon
+default max_bond_length:  3.00
+ No solvation model used
+ linit:  T
+ initboxtype: dimensions          
+initstyle Box:    1
+ template            
+Box:  1 initlattice: simple cubic        
+Box:  1 initmol:         1
+Box:  1 inix,iniy,iniz:         1          1          1
+Box idim hmatrix:    1 1   40.00000    0.00000    0.00000
+Box idim hmatrix:    1 2    0.00000   40.00000    0.00000
+Box idim hmatrix:    1 3    0.00000    0.00000   40.00000
+ pm1boxcbswap:  0.00000    
+ pm1cbswmt:  1.00000    
+ pmavb1:  0.00000    
+ pmavb1in: 0.500000    
+ pmavb1mt:  1.00000    
+moltyp:  1 pmavb1ct: 1.000000
+ avb1rad:  5.00000    
+ pmavb2:  0.00000    
+ pmavb2in: 0.500000    
+ pmavb2mt:  1.00000    
+moltyp:  1 pmavb2ct: 1.000000
+ avb2rad:  5.00000    
+ pmavb3:  0.00000    
+ pmavb3mt:  1.00000    
+moltyp:  1 pmavb3ct: 1.000000
+ avb3rad:  5.00000    
+ pmcb:  0.00000    
+ pmcbmt:  1.00000    
+ pmall:  0.00000    
+ pmback:  0.00000    
+ pmbkmt:  1.00000    
+ pmpivot:  0.00000    
+ pmpivmt:  1.00000    
+ pmconrot:  0.00000    
+ pmcrmt:  1.00000    
+ pmcrback:  0.00000    
+ pmcrbmt:  1.00000    
+ pmplane:  0.00000    
+ pmplanebox:  1.00000    
+ planewidth:  3.00000    
+ pmrow:  0.00000    
+ pmrowbox:  1.00000    
+ rowwidth:  3.00000    
+ pmtraat:  0.00000    
+ pmtamt:  1.00000    
+ rmtraa: 0.500000    
+ tatraa: 0.500000    
+ pmtracm:  0.00000    
+ pmtcmt:  1.00000    
+ rmtrac: 0.500000    
+ tatrac: 0.500000    
+ pmrotate:  1.00000    
+ pmromt:  1.00000    
+ rmrot: 0.500000E-01
+ tarot: 0.500000    
+cbmc_analysis: normal                        
+cbmc_formulation: Martin and Siepmann 1999 + Martin and Thompson 2004         
+ Original Coupled-Decoupled formulation from
+ M.G. Martin; J.I. Siepmann; J. Phys. Chem. B103 2977-2980 (1999)
+ with a decoupled bond length selection from
+ M.G. Martin; A.P. Thompson; Fluid Phase Equilib. 217 105-110 (2004)
+cbmc_setting_style: default ideal                 
+ input_style: basic connectivity map                            
+ nunit:            6
+ nmaxcbmc:            6
+ lpdbnames:  F
+   using the COMPASSv1  force field
+ charge_assignment: bond increment                
+   Building the input file for molecule type:     1
+unit:    1 name:c4o       
+unit:    2 name:h1        
+unit:    3 name:h1        
+unit:    4 name:h1        
+unit:    5 name:o2h       
+unit:    6 name:h1o       
+Charges assigned for Molecule Type:    1
+Unit:    1 nbname: c4o        Charge:    0.00100
+Unit:    2 nbname: h1         Charge:    0.05300
+Unit:    3 nbname: h1         Charge:    0.05300
+Unit:    4 nbname: h1         Charge:    0.05300
+Unit:    5 nbname: o2h        Charge:   -0.58000
+Unit:    6 nbname: h1o        Charge:    0.42000
+Total charge for Molecule Type:    1 is:    0.00000
+ Verifying input structures are consistent
+Determining Arbitrary Trial Distribution Parameters: see towhee_cbmc for full details
+Determining cyclic subunits for molecule type          1
+Default total charge on molecule   1 is   0.00000
+Total charge in the simulation system:   0.00000
+Bond Types
+Type:      5 Style: Quartic   Length: 1.1010
+          Constants:   173609.7  -348170.5   425016.7
+Type:     34 Style: Quartic   Length: 1.4200
+          Constants:   201485.6  -420284.0   660730.5
+Type:     35 Style: Quartic   Length: 0.9494
+          Constants:   271919.8  -660152.9  1073081.5
+Angle Types
+Type:   9 Style: Compass  Angle:    107.660
+          Constants:    19948.0   -6502.1   -1223.7
+           h1          9109.730  h1          9109.730
+          Bond-Bond Constant   2682.950
+Type:  56 Style: Compass  Angle:    108.728
+          Constants:    29460.6   -5439.2   -6240.2
+           h1          2324.307  o2         27841.465
+          Bond-Bond Constant  11673.568
+Type:  60 Style: Compass  Angle:    105.800
+          Constants:    26522.6   -6093.4   -4965.8
+           c4         14381.930  h1          9524.733
+          Bond-Bond Constant  -4875.112
+Angle-Angle Types
+Type:  11 Style: Compass  k:      -158.9
+Type:  20 Style: Compass  k:      1220.8
+Type:  23 Style: Compass  k:      1071.0
+Torsion Types
+Type:  54 Style: Compass with Class 2 cross terms
+          h1         c4         o2         h1        
+          Normal Torsion Constants     93.75   -218.30   -106.73
+          Bond(ij) - Torsion Constants   -883.35    661.48    113.88
+          Bond(jk) - Torsion Constants      0.00    465.02   -296.34
+          Bond(kl) - Torsion Constants    125.45    342.34      0.00
+          Angle(ijk) - Torsion Constants  -1713.96    825.07     37.09
+          Angle(jkl) - Torsion Constants      0.00   -141.40   -299.11
+          Angle(ijk) - Angle(jkl) - Torsion Constant  -5288.45
+          Bond(ij) - Bond(kl) Constant      0.00
+          with 1-4 vdw and scaled (1.000) 1-4 coulomb
+Improper Torsion Types
+   No Improper Types
+Energies exclusively from internal potentials
+Nonbonded Force Field
+Lennard-Jones 9-6 potential
+u(r) = epsilon*[2*(Ro/r)^9 - 3*(Ro/r)^6] - S
+Num. Atom(i)    Num. Atom(j)         Ro epsilon       S
+   5 h1            5 h1           2.878  11.574   0.000
+   5 h1           29 c4o          3.496  14.429   0.000
+   5 h1           30 h1o          2.565   0.733   0.000
+   5 h1           33 o2h          3.319  19.348   0.000
+  29 c4o          29 c4o          3.815  34.219   0.000
+  29 c4o          30 h1o          3.399   0.543   0.000
+  29 c4o          33 o2h          3.707  39.929   0.000
+  30 h1o          30 h1o          1.087   4.026   0.000
+  30 h1o          33 o2h          3.190   0.780   0.000
+  33 o2h          33 o2h          3.580  48.309   0.000
+ Canonical ensemble
+ 3-dimensional periodic box
+ Additional Center-of-Mass cutoff
+ Dual Cutoff Configurational-bias Monte Carlo
+ Coupled-decoupled Configurational-bias MC
+ Coulombic inter- and intra-molecular interactions
+     including the real-space terms up to half the shortest box length
+
+Molecular mass for molecule type     1 is    32.0416 g/mol
+ Calling initconf
+Selected random number generator DX-1597-2-7 and single integer seed    1302002
+Testing random number generator using the single integer seed
+    0.812479  0.687663  0.080298  0.200888  0.516914
+10 million RNG sum (approximately 5 million):   4999978.2264809748
+Box idim hinverse:    1 1    0.02500    0.00000    0.00000
+Box idim hinverse:    1 2    0.00000    0.02500    0.00000
+Box idim hinverse:    1 3    0.00000    0.00000    0.02500
+
+Number of MC cycles:                    0
+Number of molecules:                    1
+Temperature [K]:       300.00000
+
+Initial Energies for Box     1
+Total molecules in this box          1
+Molecules of type   1 :          1
+ total vibration            7.414 [K]         0.01473 [kcal/mol]
+    regular                 7.470 [K]         0.01484 [kcal/mol]
+    bond-bond(1-2)         -0.056 [K]        -0.00011 [kcal/mol]
+ total angle              206.506 [K]         0.41037 [kcal/mol]
+    regular               202.718 [K]         0.40284 [kcal/mol]
+    angle-angle             3.788 [K]         0.00753 [kcal/mol]
+ total torsion           3291.755 [K]         6.54143 [kcal/mol]
+    regular              3291.755 [K]         6.54143 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond              0.000 [K]         0.00000 [kcal/mol]
+    intramolecular          0.000 [K]         0.00000 [kcal/mol]
+    2-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+    3-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+ total coulombic            0.000 [K]         0.00000 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical              3505.6749 [K]             6.966533 [kcal/mol]
+ initial virial pressure in box  1 =          64.72
+
+ +++++ start of markov chain +++++
+
+Cycle      Box   Energy [K]  Volume [A^3] Press. [kPa] Molecules
+
+ +++++ end of markov chain +++++
+
+ Final hmatrix (general box dimensions) 
+Box:     1
+  hmatrix(1,x)      40.00000       0.00000       0.00000
+  hmatrix(2,x)       0.00000      40.00000       0.00000
+  hmatrix(3,x)       0.00000       0.00000      40.00000
+
+Final Energies for Box     1
+Total molecules in this box          1
+Molecules of type   1 :          1
+ total vibration            7.414 [K]         0.01473 [kcal/mol]
+    regular                 7.470 [K]         0.01484 [kcal/mol]
+    bond-bond(1-2)         -0.056 [K]        -0.00011 [kcal/mol]
+ total angle              206.506 [K]         0.41037 [kcal/mol]
+    regular               202.718 [K]         0.40284 [kcal/mol]
+    angle-angle             3.788 [K]         0.00753 [kcal/mol]
+ total torsion           3291.755 [K]         6.54143 [kcal/mol]
+    regular              3291.755 [K]         6.54143 [kcal/mol]
+    improper                0.000 [K]         0.00000 [kcal/mol]
+ total nonbond              0.000 [K]         0.00000 [kcal/mol]
+    intramolecular          0.000 [K]         0.00000 [kcal/mol]
+    2-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+    3-body nonbond          0.000 [K]         0.00000 [kcal/mol]
+ total coulombic            0.000 [K]         0.00000 [kcal/mol]
+ external field             0.000 [K]         0.00000 [kcal/mol]
+ solvation                  0.000 [K]         0.00000 [kcal/mol]
+ total classical              3505.6749 [K]             6.966533 [kcal/mol]
+Please see towhee_citations for a list of suggested citations for this simulation

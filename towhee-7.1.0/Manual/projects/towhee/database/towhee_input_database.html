@@ -1,0 +1,134 @@
+<html>
+<head>
+ <title>MCCCS Towhee (towhee_input Database Feature)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+ <tr> 
+  <td colspan="2" height="29"> 
+   <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top">
+    </a>MCCCS Towhee (towhee_input Database Feature) </font></b> </font>
+   </div>
+  </td>
+ </tr>
+ <A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+ </A>
+ <tr> 
+  <td width="18" height="371" valign="top"> 
+   <p>&nbsp; </p>
+   <p>&nbsp;</p>
+  </td>
+  <td width="697" valign="top"> <b>Overview</b> 
+   <ul>
+    This section covers the variables that are set in the towhee_input file when using the database feature.  This option is no longer valid and was 
+    removed in the 6.1.4 relase of Towhee.
+    Each variable is listed along with its type (logical, character, integer, or double precision).
+    towhee_input is the main input file for Towhee and is generally the only file that needs to be edited on a regular basis. It has a regimented style
+    to the input. The variables are described here in the order they appear in this file. 
+   </ul>
+
+   <b>Variable explanations for towhee_input</b> 
+   <ul>
+    <dt><a name="inputformat"><b>inputformat (character string)</b></a> 
+     <ul>
+      <li>'Database' : is the only valid option when utilizing the database features.</li>
+     </ul>
+    </dt>
+
+    <dt><a name="minimum_vector_length"><b>minimum vector length (double precision)</b></a> 
+     <ul>
+      <li>The minimum length of any of the dimensions when creating the simulation box.</li>
+     </ul>
+    </dt>
+
+    <dt><a name="classical_potential"><b>classical_potential (character*30)</b></a> 
+     <ul>
+      The setting for this variable controls the nonbonded potential type.  Depending on the setting there are a number of other variables that also must
+      be listed.  Please see the <a href="../potentype/towhee_input_classical_potential.html">classical_potential</a> web page for more information.
+     </ul>
+    </dt>
+
+    <dt><a name="energyfitstyle"><b>energyfitstyle (character*15)</b></a> 
+     <ul>
+      <li>'absolute': fits to the absolute energies specified in towhee_database.  This means the binding energy of the solid is explicitly in the fit.</li>
+      <li>'relative': fits to the energies relative to the specified ground state.  The binding energy of the ground state is not included in the fit
+        and is instead computed as part of the fit.
+      </li>
+     </ul>
+    </dt>
+
+    <dt><a name="loptimize"><b>loptimize (logical)</b></a> 
+     <ul>
+      <li> .true. if you want to use least squares to fit the optimal prefactors for the linear combination of the strictly pair-potential and the
+       multi-body parts of the forcefield to the data set.
+      </li>
+      <li> .false. if you want the answers without any fitting of parameters.</li>
+     </ul>
+    </dt>
+
+    <dt><a name="lprint"><b>lprint (logical)</b></a> 
+     <ul>
+      <li> .true. if you want to see the details of the energy output from engtotal for each of the data points in towhee_database.  Please note that
+       this is a lot of output and should definitely not be used in combination with the Dakota fitting procedure.  It is intended for use when you 
+       desire more information about a single parameter set.
+      </li>
+      <li> .false. if you do not want extra energy information.</li>
+     </ul>
+    </dt>
+
+    <dt><a name="ffnumber"><b>ffnumber (integer)</b></a> 
+     <ul>
+      <li> 1 or more: reads the force field information from this number of file(s) listed in the <b>ff_filename</b>.</li>
+     </ul>
+    </dt>
+
+    <dt><a name="ff_filename"><b>ff_filename (formatted character*70) [one line for each force field]</b></a> 
+     <ul>
+      <li>A list of the filenames (one per line) that contain the force field information.</li>
+     </ul>
+    </dt>
+
+    <dt><a name="datapoints"><b>datapoints (integer)</b></a> 
+     <ul>
+      <li>The number of datapoints in the training set to read from towhee_database.</li>
+     </ul>
+    </dt>
+
+    <dt><a name="scanstyle"><b>scanstyle (character string)</b></a> 
+     <ul>
+      <li>'dakota' reads dakota_input and adjusts some force field parameters accordingly.</li>
+      <li>'none' no adjustment to the forcefield parameters.</li>
+     </ul>
+    </dt>
+
+    <dt><font color="red">The following are only required if</font> <b>scanstyle</b> is 'dakota' <font color="red">and</font> 
+     <b>classical_potential</b> is 'Embedded Atom Method'
+    </dt>
+    <dt><a name="nscale"><b>nscale (integer)</b></a> 
+     <ul>
+      <li>The number of interactions, involving pairs of atomtypes, that you wish to rescale.</li>
+     </ul>
+    </dt>
+    <dt><a name="interaction"><b>interaction (character*5), atomone (character*2), atomtwo (character(2)</b></a> 
+     <ul>
+      <li>List on <b>nscale</b> lines where each line contains the name of the interaction (embed or pair),atom name #1, and atom name #2</li>
+     </ul>
+    </dt>
+   </ul>
+   <a href="../index.html">Return to the main towhee web page</a> 
+   <p>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->December 7, 2008<!-- #EndDate -->
+</font> <br>
+</body>
+</html>
+

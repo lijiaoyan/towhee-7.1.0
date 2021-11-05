@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>MCCCS Towhee (Elliott 2002)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (Elliott 2002)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers Elliott 2002 parameters as they are implemented into the towhee_ff_Elli2002
+	file in the ForceFields directory.  This force field contains parameters for some linear alkanes and benzene 
+	and uses the 'Multiwell' force field.  It is designed for use with the Lorentz-Berthelot mixing rule.
+	I would like to acknowledge J. Richard Elliott for providing useful guidance about implementing this force 
+	field.  Any discrepencies (especially typos) from the published Elli2002 force field values are the sole
+	responsibility of Marcus G. Martin, and I welcome feedback on how this implementation compares with other 
+	programs.
+      </ul>
+
+      <b>References for Elliott 2002</b> 
+      <ul>
+	  <li><a href="../references.html#elliott_2002">Elliott 2002</a></li>
+      </ul>	
+
+      <b>Elliott 2002 in Towhee</b> 
+
+      <ul>
+        The official force field name for Elliott 2002 in Towhee is 'Elli2002'.  Here is a list of all
+	atom names currently in use for the towhee_input file,
+	along with a brief description.
+	Please note that the capitalization and spacing pattern is important 
+	and must be followed exactly as listed here.
+	<ul>
+          <li><b>'methane'</b> : united-atom methane</li>
+          <li><b>'ethane'</b> : united-atom CH<sub>3</sub> in ethane</li>
+          <li><b>'butane-CH3'</b> : united-atom CH<sub>3</sub> in butane</li>
+          <li><b>'butane-CH2'</b> : united-atom CH<sub>2</sub> in butane</li>
+          <li><b>'hexane-CH3'</b> : united-atom CH<sub>3</sub> in hexane</li>
+          <li><b>'hexane-CH2'</b> : united-atom CH<sub>2</sub> in hexane</li>
+          <li><b>'octane-CH3'</b> : united-atom CH<sub>3</sub> in octane</li>
+          <li><b>'octane-CH2'</b> : united-atom CH<sub>2</sub> in octane</li>
+          <li><b>'benzene'</b> : united-atom CH<sub>2</sub> in benzene</li>
+	</ul>
+      </ul>
+
+      <b>Coulombic interactions</b> 
+      <ul>
+        This force field does not utilize coulombic interactions.
+      </ul>
+
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+
+
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->July 23, 2014<!-- #EndDate -->
+</font> <br>
+</body>
+</html>

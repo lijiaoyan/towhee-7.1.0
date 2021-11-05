@@ -1,0 +1,527 @@
+<html>
+<head>
+  <title>MCCCS Towhee (OPLS-1996)</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+<table width="675" border="0" cellspacing="0" cellpadding="0" height="590">
+  <tr> 
+    <td colspan="2" height="29"> 
+      <div align="center"> <font size="5"> <b><font face="Arial, Helvetica, sans-serif"><a name="top"></a>MCCCS 
+        Towhee (OPLS-1996)</font></b> </font> </div>
+    </td>
+  </tr>
+<A href="http://sourceforge.net"> 
+  <IMG src="http://sourceforge.net/sflogo.php?group_id=87039&amp;type=5" width="210" height="62" border="0" 
+  alt="SourceForge.net Logo" align="right"/>
+</A>
+  <tr> 
+    <td width="18" height="371" valign="top"> 
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
+    </td>
+    <td width="697" valign="top"> <b>Overview</b> 
+      <ul>
+        This section covers the OPLS-1996 force field as it is implemented into the towhee_ff_OPLS-1996 file in the 
+	ForceFields directory. All of the Towhee atom types for this force field 
+        are listed, along with a short description of their meanings. For more 
+        information about the OPLS family of force fields see the <a href="http://zarbi.chem.yale.edu/">Jorgensen 
+        group home page</a>. Note this is a Lennard-Jones force 
+        field and can only be combined with other Lennard-Jones force fields. 
+	The rather famous OPLS water models are not included here as they are provided in their own 
+	force field files.  Please see the <a href="tip3p.html">TIP3P</a>, <a href="tip4p.html">TIP4P</a>,
+	and <a href="tip5p.html">TIP5P</a> web pages for more information about those water models.
+
+	Note that the all-atom OPLS force fields were preceded by a united-atom version of the force field 
+	called <a href="oplsua.html">OPLS-ua</a>.  There are several similar, but slightly different, versions 
+	of the OPLS all-atom forcefields implemented into Towhee.  See <a href="oplsaa.html">OPLS-aa</a> and 
+	<a href="opls2001.html">OPLS-2001</a> for descriptions of these other versions.
+        I would like to acknowledge W.L. Jorgensen for kindly providing me with 
+        an electronic copy of the OPLS-1996 parameters. Any discrepencies (especially 
+        typos) from the published OPLS-1996 force field values are the sole 
+        responsibility of Marcus G. Martin, and I welcome feedback on how this 
+        implementation compares with other programs. 
+        <p>&nbsp;</p>
+      </ul>
+      <b>References for OPLS-1996</b> 
+      <ul>
+        This implementation is taken from an electronic version of the OPLS parameters that is dated 12/96.  That file references the following 
+	publication.
+        <ul>
+          <li><a href="../references.html#jorgensen_et_al_1996">Jorgensen <i>et al.</i> 1996</a></li>
+          <li><a href="../references.html#jorgensen_per_com_1996">Jorgensen <i>personal communication</i> 1996</a></li>
+        </ul>
+      </ul>
+      <b>OPLS-1996 in Towhee</b> 
+      <ul>
+        The official force field name for OPLS-1996 in Towhee is 'OPLS-1996'. Here 
+        I list all of the atom names for use in the towhee_input file, 
+        along with a brief description taken from the electronic file.
+	This file contains a mixture of united-atom and all-atom parameters.
+	The Towhee name is a combination of the two letter descriptor and the integer count for each atom type 
+	provided in the electronic file.
+        The capitalization and spacing pattern is important and must be followed exactly as listed here. 
+        <ul>
+	  <dt><font color="red">Types 1-134 are from the united-atom force field.  Some are needed for the UA solvents.</font></dt>
+	  <dt><font color="red">Note: for UA amide parameters</font>
+	    <ul>
+	      <li>NMA - types 1,2,3,4,7,39</li>
+	      <li>formamide 131,2,12,13</li>
+	      <li>DMF 131,2,3,132</li>
+	      <li>acetamide 1,2,7,12,13</li>
+	    </ul>
+	  </dt>
+	  <li><b>'C -1'</b> : </li>
+	  <li><b>'O -2'</b> : </li>
+	  <li><b>'N -3'</b> : </li>
+	  <li><b>'H -4'</b> : </li>
+	  <li><b>'C2-5'</b> : </li>
+	  <li><b>'CH-6'</b> : </li>
+	  <li><b>'C3-7'</b> : </li>
+	  <li><b>'CH-8'</b> : </li>
+	  <li><b>'C2-9'</b> : </li>
+	  <li><b>'C3-10'</b> : </li>
+	  <li><b>'CD-11'</b> : </li>
+	  <li><b>'N -12'</b> : </li>
+	  <li><b>'H -13'</b> : </li>
+	  <li><b>'CH-14'</b> : </li>
+	  <li><b>'C2-15'</b> : </li>
+	  <li><b>'C2-16'</b> : </li>
+	  <li><b>'C -17'</b> : </li>
+	  <li><b>'O2-18'</b> : </li>
+	  <li><b>'C2-19'</b> : </li>
+	  <li><b>'N3-20'</b> : </li>
+	  <li><b>'H3-21'</b> : </li>
+	  <li><b>'C2-22'</b> : </li>
+	  <li><b>'OH-23'</b> : </li>
+	  <li><b>'HO-24'</b> : </li>
+	  <li><b>'CH-25'</b> : </li>
+	  <li><b>'C -26'</b> : </li>
+	  <li><b>'C2-27'</b> : </li>
+	  <li><b>'C2-28'</b> : </li>
+	  <li><b>'CH-29'</b> : </li>
+	  <li><b>'CH-30'</b> : </li>
+	  <li><b>'C2-31'</b> : </li>
+	  <li><b>'SH-32'</b> : </li>
+	  <li><b>'HS-33'</b> : </li>
+	  <li><b>'C2-34'</b> : </li>
+	  <li><b>'S -35'</b> : </li>
+	  <li><b>'C3-36'</b> : </li>
+	  <li><b>'C2-37'</b> : </li>
+	  <li><b>'S -38'</b> : </li>
+	  <li><b>'C3-39'</b> : </li>
+	  <li><b>'NA-40'</b> : </li>
+	  <li><b>'H -41'</b> : </li>
+	  <li><b>'NB-42'</b> : </li>
+	  <li><b>'CP-43'</b> : </li>
+	  <li><b>'CF-44'</b> : </li>
+	  <li><b>'CC-45'</b> : </li>
+	  <li><b>'NA-46'</b> : </li>
+	  <li><b>'H -47'</b> : </li>
+	  <li><b>'CP-48'</b> : </li>
+	  <li><b>'CG-49'</b> : </li>
+	  <li><b>'CB-50'</b> : </li>
+	  <li><b>'N2-51'</b> : </li>
+	  <li><b>'H3-52'</b> : </li>
+	  <li><b>'CA-53'</b> : </li>
+	  <li><b>'N2-54'</b> : </li>
+	  <li><b>'H3-55'</b> : </li>
+	  <li><b>'C2-56'</b> : </li>
+	  <li><b>'C2-57'</b> : </li>
+	  <li><b>'C -58'</b> : C in COOR ester JPC3315(91)</li>
+	  <li><b>'O -59'</b> : O= in COOR ester</li>
+	  <li><b>'CH-60'</b> : </li>
+	  <li><b>'C2-61'</b> : </li>
+	  <li><b>'OS-62'</b> : O- in COOR ester</li>
+	  <li><b>'C3-63'</b> : CH3 in COOCH3</li>
+	  <li><b>'CT-64'</b> : </li>
+	  <li><b>'C3-65'</b> : </li>
+	  <dt><font color="red">Types 66-77 JACS,106,6638 (1984)</font></dt>
+	  <li><b>'C4-66'</b> : CH4</li>
+	  <li><b>'C3-67'</b> : CH3 (C1) ETHANE</li>
+	  <li><b>'C3-68'</b> : CH3 (C2) N-ALKANES</li>
+	  <li><b>'C3-69'</b> : CH3 (C3) ISOBUTANE</li>
+	  <li><b>'C3-70'</b> : CH3 (C4) NEOPENTANE</li>
+	  <li><b>'C2-71'</b> : CH2 (SP3) ALKANES</li>
+	  <li><b>'C9-72'</b> : CH2 (SP2) 1-ALKENES</li>
+	  <li><b>'CH-73'</b> : CH (SP3) ISOBUTANE</li>
+	  <li><b>'C8-74'</b> : CH (SP2) 2-ALKENES</li>
+	  <li><b>'CD-75'</b> : CH (AROM) BENZENOID united atom</li>
+	  <li><b>'CT-76'</b> : C (SP3) NEOPENTANE</li>
+	  <li><b>'C7-77'</b> : C (SP2) ISOBUTENE</li>
+	  <li><b>'OH-78'</b> : O ALCOHOLS JPC,90,1276 (1986)</li>
+	  <li><b>'HO-79'</b> : H(O) ALCOHOLS JPC,90,1276 (1986)</li>
+	  <li><b>'C3-80'</b> : CH3 IN METHANOL JPC,90,1276 (1986)</li>
+	  <li><b>'C2-81'</b> : CH2 IN ETHANOL JPC,90,1276 (1986)</li>
+	  <li><b>'SH-82'</b> : S IN H2S JPC,90,6379 (1986)</li>
+	  <li><b>'SH-83'</b> : S IN RSH JPC,90,6379 (1986)</li>
+	  <li><b>'S -84'</b> : S IN RSR JPC,90,6379 (1986)</li>
+	  <li><b>'S -85'</b> : S IN RSSR JPC,90,6379 (1986)</li>
+	  <li><b>'HS-86'</b> : H IN H2S JPC,90,6379 (1986)</li>
+	  <li><b>'HS-87'</b> : H(S) IN RSH JPC,90,6379 (1986)</li>
+	  <li><b>'C3-88'</b> : CH3 IN CH2SH JPC,90,6379 (1986)</li>
+	  <li><b>'C2-89'</b> : CH2 IN CH3CHSSH JPC,90,6379 (1986)</li>
+	  <li><b>'C3-90'</b> : CH3 IN CH3SR JPC,90,6379 (1986)</li>
+	  <li><b>'C2-91'</b> : CH2 IN RCH2SR JPC,90,6379 (1986)</li>
+	  <li><b>'C3-92'</b> : CH3 IN CH3SSR JPC,90,6379 (1986)</li>
+	  <li><b>'C2-93'</b> : CH2 IN RCH2SSR JPC,90,6379 (1986)</li>
+	  <li><b>'Ar-97'</b> : Ar - Verlet & Weis, Mol Phys. 24,1013 (1972)</li>
+	  <li><b>'Kr-98'</b> : Kr - Verlet & Weis, Mol Phys. 24,1013 (1972)</li>
+	  <li><b>'Xe-99'</b> : Xe - Verlet & Weis, Mol Phys. 24,1013 (1972)</li>
+	  <li><b>'N3-101'</b> : N (NH4+) JPC,90,2174 (1986)</li>
+	  <li><b>'N3-102'</b> : N (RNH3+) JPC,90,2174 (1986)</li>
+	  <li><b>'H3-104'</b> : H (NH4+) JPC,90,2174 (1986)</li>
+	  <li><b>'H3-105'</b> : H (RNH3+) JPC,90,2174 (1986)</li>
+	  <li><b>'C3-106'</b> : CH3 (CH3NH3+) JPC,90,2174 (1986) United-atom</li>
+	  <li><b>'C3-107'</b> : CH3 ((CH3)4N+) JPC,90,2174 (1986) United-atom</li>
+	  <li><b>'OS-108'</b> : ETHER O JCC,11,958 (1990)</li>
+	  <li><b>'C3-109'</b> : ETHER CH3 (-O) JCC,11,958 (1990)</li>
+	  <li><b>'C2-110'</b> : ETHER CH2 (-O) JCC,11,958 (1990)</li>
+	  <li><b>'C2-118'</b> : CH2 Methylenechloride C-CL = 1.772</li>
+	  <li><b>'Cl-119'</b> : Cl Methylenechloride Cl-C-Cl = 111.8</li>
+	  <li><b>'CH-120'</b> : CH Chloroform JPC,94,1683 (1990)</li>
+	  <li><b>'Cl-121'</b> : Cl Chloroform C-Cl = 1.758 Cl-C-Cl = 111.3</li>
+	  <li><b>'CT-122'</b> : C CCl4</li>
+	  <li><b>'Cl-123'</b> : Cl CCl4</li>
+	  <li><b>'Ne-129'</b> : Neon - Hirschfelder (Wiley,1954)</li>
+	  <li><b>'He-130'</b> : Helium - Hirschfelder (Wiley,1954)</li>
+	  <li><b>'C -131'</b> : C in C=O for UA formamide, DMF</li>
+	  <li><b>'C3-132'</b> : CH3 in HCON(CH3)2 DMF</li>
+
+	  <dt><font color="red">All-atom parameters start at 135.</font></dt>
+          <li><b>'CT-135'</b> : CH3 all-atom C: alkanes</li>
+	  <li><b>'CT-136'</b> : CH2 all-atom C: alkanes</li>
+	  <li><b>'CT-137'</b> : CH all-atom C: alkanes</li>
+	  <li><b>'CT-138'</b> : CH4 all-atom C: methane</li>
+	  <li><b>'CT-139'</b> : C all-atom C: alkanes</li>
+	  <li><b>'HC-140'</b> : H all-atom H: alkanes</li>
+	  <li><b>'CM-141'</b> : alkene C (R2-C=) all atom</li>
+	  <li><b>'CM-142'</b> : alkene C (RH-C=) all atom</li>
+	  <li><b>'CM-143'</b> : alkene C (H2-C=) all atom</li>
+	  <li><b>'HC-144'</b> : alkene H (H-C=) all atom</li>
+	  <li><b>'CA-145'</b> : Benzene C - 12 site JACS, 112, 4768-90</li>
+	  <li><b>'HA-146'</b> : Benzene H - 12 site</li>
+	  <li><b>'CA-147'</b> : Naphthalene fusion C (C9)</li>
+	  <li><b>'CT-148'</b> : all-atom C: CH3, toluene</li>
+	  <li><b>'CT-149'</b> : all -atom C: CH2, ethyl benzene</li>
+	  <li><b>'OH-154'</b> : all-atom O: mono alcohols</li>
+	  <li><b>'HO-155'</b> : all-atom H(O): mono alcohols</li>
+	  <li><b>'HC-156'</b> : all-atom H(C): methanol</li>
+	  <li><b>'CT-157'</b> : all-atom C: CH3 & CH2, alcohols</li>
+	  <li><b>'CT-158'</b> : all-atom C: CH, alcohols</li>
+	  <li><b>'CT-159'</b> : all-atom C: C, alcohols</li>
+	  <li><b>'CT-160'</b> : CH2 Trifluoroethanol</li>
+	  <li><b>'CT-161'</b> : CF3 Trifluoroethanol</li>
+	  <li><b>'OH-162'</b> : OH Trifluoroethanol</li>
+	  <li><b>'HO-163'</b> : HO Trifluoroethanol</li>
+	  <li><b>'F -164'</b> : F Trifluoroethanol</li>
+	  <li><b>'HC-165'</b> : H Trifluoroethanol</li>
+	  <li><b>'CA-166'</b> : C(OH) phenol Use with all atom C, H 145 & 146</li>
+	  <li><b>'OH-167'</b> : O phenol Use with all atom C, H 145 & 146</li>
+	  <li><b>'HO-168'</b> : H phenol Use with all atom C, H 145 & 146</li>
+	  <li><b>'OH-169'</b> : O: diols</li>
+	  <li><b>'HO-170'</b> : H(O) diols</li>
+	  <li><b>'OS-180'</b> : O: ether</li>
+	  <li><b>'CT-181'</b> : C(H3OR): methyl ether</li>
+	  <li><b>'CT-182'</b> : C(H2OR): ethyl ether</li>
+	  <li><b>'CT-183'</b> : C(HOR): i-Pr ether</li>
+	  <li><b>'CT-184'</b> : C(OR): t-Bu ether</li>
+	  <li><b>'HC-185'</b> : H(COR): alpha H ether</li>
+	  <li><b>'OS-186'</b> : O: acetal</li>
+	  <li><b>'OH-187'</b> : O(H): hemiacetal</li>
+	  <li><b>'HO-188'</b> : H(O): hemiacetal</li>
+	  <li><b>'CO-189'</b> : C(H2O2): acetal OCH2O</li>
+	  <li><b>'HC-190'</b> : H(CHO2): acetal OCH2O</li>
+	  <li><b>'CO-191'</b> : C(H2O2): hemiacetal OCH2OH</li>
+	  <li><b>'HC-192'</b> : H(CHO2): hemiacetal OCH2OH</li>
+	  <li><b>'CO-193'</b> : C(HCO2): acetal OCHRO</li>
+	  <li><b>'HC-194'</b> : H(CHO2): acetal OCHRO</li>
+	  <li><b>'CO-195'</b> : C(HCO2): hemiacetal OCHROH</li>
+	  <li><b>'HC-196'</b> : H(C2O2): hemiacetal OCHROH</li>
+	  <li><b>'CO-197'</b> : C(C2O2): acetal OCRRO</li>
+	  <li><b>'CO-198'</b> : C(C2O2): hemiacetal OCRROH</li>
+	  <li><b>'SH-200'</b> : all-atom S: thiols</li>
+	  <li><b>'SH-201'</b> : S IN H2S JPC,90,6379 (1986)</li>
+	  <li><b>'S -202'</b> : all-atom S: sulfides</li>
+	  <li><b>'S -203'</b> : all-atom S: disulfides</li>
+	  <li><b>'HS-204'</b> : all-atom H(S): thiols</li>
+	  <li><b>'HS-205'</b> : H IN H2S JPC,90,6379 (1986)</li>
+	  <li><b>'CT-206'</b> : all-atom C: CH2, thiols</li>
+	  <li><b>'CT-207'</b> : all-atom C: CH, thiols</li>
+	  <li><b>'CT-208'</b> : all-atom C: C, thiols</li>
+	  <li><b>'CT-209'</b> : all-atom C: CH3, sulfides</li>
+	  <li><b>'CT-210'</b> : all-atom C: CH2, sulfides</li>
+	  <li><b>'CT-211'</b> : all-atom C: CH, sulfides</li>
+	  <li><b>'CT-212'</b> : all-atom C: C, sulfides</li>
+	  <li><b>'CT-213'</b> : all-atom C: CH3, disulfides</li>
+	  <li><b>'CT-214'</b> : all-atom C: CH2, disulfides</li>
+	  <li><b>'CT-215'</b> : all-atom C: CH, disulfides</li>
+	  <li><b>'CT-216'</b> : all-atom C: C, disulfides</li>
+	  <li><b>'NT-220'</b> : N in RNH2 amine JPC,94,1683 (1990)</li>
+	  <li><b>'H2-221'</b> : H in RNH2 amine</li>
+	  <li><b>'CT-222'</b> : C in CH3NH2; H on C is type 140</li>
+	  <li><b>'CT-223'</b> : C in RCH2NH2 and Gly CA</li>
+	  <li><b>'CT-224'</b> : C in R2CHNH2 and Ala CA</li>
+	  <li><b>'CT-225'</b> : C in R3CNH2 and Aib CA</li>
+	  <li><b>'CA-226'</b> : C(NH2) aniline</li>
+	  <li><b>'NT-227'</b> : N aniline</li>
+	  <li><b>'H2-228'</b> : H(N) aniline</li>
+	  <li><b>'NT-229'</b> : N in R3N trimethylamine</li>
+	  <li><b>'CT-230'</b> : C in RCH2NRR H on C is type 140</li>
+	  <li><b>'CT-231'</b> : C in RN(CH3)2 H on C is type 140</li>
+	  <li><b>'C -235'</b> : C: C=O in amide. Acyl R in amides is neutral - use alkane parameters.</li>
+	  <li><b>'O -236'</b> : O: C=O in amide. Acyl R in amides is neutral - use alkane parameters.</li>
+	  <li><b>'N -237'</b> : N: primary amide.</li>
+	  <li><b>'N -238'</b> : N: secondary amide</li>
+	  <li><b>'N -239'</b> : N: tertiary amide</li>
+	  <li><b>'H -240'</b> : H on N: primary amide</li>
+	  <li><b>'H -241'</b> : H on N: secondary amide</li>
+	  <li><b>'CT-242'</b> : C on N: secondary N-Me amide</li>
+	  <li><b>'CT-243'</b> : C on N: tertiary N-Me amide</li>
+	  <li><b>'CT-244'</b> : C on N: secondary N-CH2R amide</li>
+	  <li><b>'CT-245'</b> : C on N: tertiary N-CH2R amide (Pro Cdelta)</li>
+	  <li><b>'CT-246'</b> : C on N: tertiary N-CHR2 amide (Pro Calpha)</li>
+	  <li><b>'C -247'</b> : C in O=C(NH2)2 Urea</li>
+	  <li><b>'O -248'</b> : O in O=C(NHw)w Urea Isr. J. Chem. 33, 323 (93)</li>
+	  <li><b>'N -249'</b> : N in O=C(NH2)2 Urea Isr. J. Chem. 33, 323 (93)</li>
+	  <li><b>'H -250'</b> : H in O=C(NH2)2 Urea</li>
+	  <li><b>'N -251'</b> : N in imide</li>
+	  <li><b>'C -252'</b> : C(=O) in imide</li>
+	  <li><b>'O -253'</b> : O in imide</li>
+	  <li><b>'H -254'</b> : H(N) in imide</li>
+	  <li><b>'HC-255'</b> : H(C) in formimide</li>
+	  <li><b>'CT-256'</b> : C in CH3 imide</li>
+	  <li><b>'CT-257'</b> : C in RCH2 imide</li>
+	  <li><b>'CT-258'</b> : C in R2CH imide</li>
+	  <li><b>'CT-259'</b> : C in R3C imide</li>
+	  <li><b>'C -267'</b> : Co in CCOOH carboxylic acid</li>
+	  <li><b>'OH-268'</b> : Oh in CCOOH: R in RCOOH is neutral; use 135-140 </li>
+	  <li><b>'O -269'</b> : Oc in CCOOH</li>
+	  <li><b>'HO-270'</b> : H in CCOOH</li>
+	  <li><b>'C -271'</b> : C in COO- carboxylate</li>
+	  <li><b>'O2-272'</b> : O: O in COO- carboxylate</li>
+	  <li><b>'CT-273'</b> : C: CH3, carboxylate ion</li>
+	  <li><b>'CT-274'</b> : C: CH2, carboxylate ion</li>
+	  <li><b>'CT-275'</b> : C: CH, carboxylate ion</li>
+	  <li><b>'CT-276'</b> : C: C, carboxylate ion</li>
+	  <li><b>'C -277'</b> : AA C: aldehyde - for C-alpha use 135-139</li>
+	  <li><b>'O -278'</b> : AA O: aldehyde</li>
+	  <li><b>'HC-279'</b> : AA H-alpha in aldehyde & formamide</li>
+	  <li><b>'C -280'</b> : AA C: ketone - for C-alpha use 135-139</li>
+	  <li><b>'O -281'</b> : AA O: ketone</li>
+	  <li><b>'HC-282'</b> : AA H on C-alpha in ketone & aldehyde</li>
+	  <li><b>'N3-286'</b> : N (NH4+) JPC,90,2174 (1986)</li>
+	  <li><b>'N3-287'</b> : N (RNH3+) JPC,90,2174 (1986)</li>
+	  <li><b>'H3-289'</b> : H (NH4+) JPC,90,2174 (1986)</li>
+	  <li><b>'H3-290'</b> : H (RNH3+) JPC,90,2174 (1986)</li>
+	  <li><b>'CT-291'</b> : C in CH3NH3+</li>
+	  <li><b>'CT-292'</b> : C in RCH2NH3+</li>
+	  <li><b>'CT-293'</b> : C in R2CHNH3+</li>
+	  <li><b>'CT-294'</b> : C in R3CNH3+</li>
+	  <li><b>'N2-300'</b> : N: guanidinium NH2</li>
+	  <li><b>'H3-301'</b> : H: guanidinium NH2</li>
+	  <li><b>'CA-302'</b> : C: guanidinum C+</li>
+	  <li><b>'N2-303'</b> : N: guanidinium NHR</li>
+	  <li><b>'H3-304'</b> : H: guanidinium NHR</li>
+	  <li><b>'CT-305'</b> : C: CH3, methylguanidinium</li>
+	  <li><b>'CT-306'</b> : C: CH3, ethylguanidinium</li>
+	  <li><b>'CT-307'</b> : C: CH2(D), ARG,ethylguanidinium</li>
+	  <li><b>'CT-308'</b> : C: CH2(G), ARG</li>
+	  <li><b>'NA-311'</b> : DAP N1 Diamino-pyridine</li>
+	  <li><b>'CA-312'</b> : DAP C2 Diamino-pyridine</li>
+	  <li><b>'N2-313'</b> : DAP N-amine</li>
+	  <li><b>'H2-314'</b> : DAP H-amine</li>
+	  <li><b>'CA-315'</b> : DAP C3</li>
+	  <li><b>'HC-316'</b> : DAP H3</li>
+	  <li><b>'CA-317'</b> : DAP C4</li>
+	  <li><b>'HC-318'</b> : DAP H4</li>
+	  <li><b>'NA-319'</b> : Uracil N1 - use AT=N* for nucleoside</li>
+	  <li><b>'C -320'</b> : Uracil C2</li>
+	  <li><b>'NA-321'</b> : Uracil N3</li>
+	  <li><b>'C -322'</b> : Uracil C4</li>
+	  <li><b>'CM-323'</b> : Uracil C5</li>
+	  <li><b>'CM-324'</b> : Uracil C6</li>
+	  <li><b>'H -325'</b> : Uracil H-N1</li>
+	  <li><b>'O -326'</b> : Uracil O-C2</li>
+	  <li><b>'H -327'</b> : Uracil H-N3</li>
+	  <li><b>'O -328'</b> : Uracil O-C4</li>
+	  <li><b>'HC-329'</b> : Uracil H-C5</li>
+	  <li><b>'HC-330'</b> : Uracil H-C6</li>
+	  <li><b>'CT-331'</b> : Thymine C-C5</li>
+	  <li><b>'HC-332'</b> : Thymine H-CC5</li>
+	  <li><b>'NA-333'</b> : Cytosine N1 - use AT=N* for nucleoside</li>
+	  <li><b>'C -334'</b> : Cytosine C2</li>
+	  <li><b>'NC-335'</b> : Cytosine N3</li>
+	  <li><b>'CA-336'</b> : Cytosine C4 Nucleotide base parameters: JACS 113,2810 (1991)</li>
+	  <li><b>'CA-337'</b> : Cytosine C5</li>
+	  <li><b>'CM-338'</b> : Cytosine C6</li>
+	  <li><b>'H -339'</b> : Cytosine H-N1</li>
+	  <li><b>'O -340'</b> : Cytosine O-C2</li>
+	  <li><b>'N2-341'</b> : Cytosine N-C4</li>
+	  <li><b>'H2-342'</b> : Cytosine H-NC4/N3</li>
+	  <li><b>'H2-343'</b> : Cytosine H-NC4/C5</li>
+	  <li><b>'HC-344'</b> : Cytosine H-C5</li>
+	  <li><b>'HC-345'</b> : Cytosine H-C6</li>
+	  <li><b>'NC-346'</b> : Adenine N1</li>
+	  <li><b>'CQ-347'</b> : Adenine C2</li>
+	  <li><b>'NC-348'</b> : Adenine N3</li>
+	  <li><b>'CB-349'</b> : Adenine C4</li>
+	  <li><b>'CB-350'</b> : Adenine C5</li>
+	  <li><b>'CA-351'</b> : Adenine C6</li>
+	  <li><b>'NB-352'</b> : Adenine N7 Guanine</li>
+	  <li><b>'CK-353'</b> : Adenine C8 Guanine</li>
+	  <li><b>'NA-354'</b> : Adenine N9 Guanine - use AT=N* for nucleoside</li>
+	  <li><b>'HC-355'</b> : Adenine H-C2</li>
+	  <li><b>'N2-356'</b> : Adenine N-C6</li>
+	  <li><b>'H2-357'</b> : Adenine H-NC6/N1</li>
+	  <li><b>'H2-358'</b> : Adenine H-NC6/C5</li>
+	  <li><b>'HC-359'</b> : Adenine H-C8 Guanine</li>
+	  <li><b>'H -360'</b> : Adenine H-N9 Guanine</li>
+	  <li><b>'NA-361'</b> : Guanine N1</li>
+	  <li><b>'CA-362'</b> : Guanine C2</li>
+	  <li><b>'NC-363'</b> : Guanine N3</li>
+	  <li><b>'CB-364'</b> : Guanine C4</li>
+	  <li><b>'CB-365'</b> : Guanine C5</li>
+	  <li><b>'C -366'</b> : Guanine C6</li>
+	  <li><b>'H -367'</b> : Guanine H-N1</li>
+	  <li><b>'N2-368'</b> : Guanine N-C2</li>
+	  <li><b>'H2-369'</b> : Guanine H-NC2</li>
+	  <li><b>'O -370'</b> : Guanine O-C6</li>
+	  <li><b>'CT-371'</b> : 9-Me A or G C-N9</li>
+	  <li><b>'HC-372'</b> : 9-Me A or G H-CN9</li>
+	  <li><b>'CT-373'</b> : 1-Me U or T C-N1</li>
+	  <li><b>'HC-374'</b> : 1-Me U or T H-CN1</li>
+	  <li><b>'CT-375'</b> : 1-Me Cytosine C-N1</li>
+	  <li><b>'HC-376'</b> : 1-Me Cytosine H-CN1</li>
+	  <li><b>'NA-377'</b> : CytH+ N1 Use AT=N* for nucleoside.</li>
+	  <li><b>'C -378'</b> : CytH+ C2</li>
+	  <li><b>'NA-379'</b> : CytH+ N3 Protonated cytosine.</li>
+	  <li><b>'CA-380'</b> : CytH+ C4</li>
+	  <li><b>'CM-381'</b> : CytH+ C5</li>
+	  <li><b>'CM-382'</b> : CytH+ C6</li>
+	  <li><b>'H -383'</b> : CytH+ H-N1</li>
+	  <li><b>'O -384'</b> : CytH+ O-C2</li>
+	  <li><b>'H -385'</b> : CythH+ H-N3</li>
+	  <li><b>'N2-386'</b> : CytH+ N-C4</li>
+	  <li><b>'H2-387'</b> : CytH+ H-NC4/N3</li>
+	  <li><b>'H2-388'</b> : CytH+ H-NC4/C5</li>
+	  <li><b>'HC-389'</b> : CytH+ H-C5</li>
+	  <li><b>'HC-390'</b> : CytH+ H-C6</li>
+	  <li><b>'CT-391'</b> : 1-Me CytH+ C-N1</li>
+	  <li><b>'HC-392'</b> : 1-Me CytH+ H-CN1</li>
+	  <li><b>'P -393'</b> : P dimethylphosphate anion</li>
+	  <li><b>'O2-394'</b> : O(=) dimethylphosphate anion</li>
+	  <li><b>'OS-395'</b> : O(-) dimethylphosphate anion</li>
+	  <li><b>'CT-396'</b> : C in CH3 dimethylphosphate anion</li>
+	  <li><b>'F -400'</b> : F- JACS 106,903 (1984)</li>
+	  <li><b>'Cl-401'</b> : Cl- JACS 106, 903 (1984)</li>
+	  <li><b>'Br-402'</b> : Br- JACS 107, 7793 (1985)</li>
+	  <li><b>'Li-404'</b> : Li+ JACS 106, 903 (1984)</li>
+	  <li><b>'Na-405'</b> : Na+ JACS 106, 903 (1984)</li>
+	  <li><b>'Li-406'</b> : Li+ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'Na-407'</b> : Na+ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'K -408'</b> : K+ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'Rb-409'</b> : Rb+ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'Cs-410'</b> : Cs+ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'Mg-411'</b> : Mg++ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'Ca-412'</b> : Ca++ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'Sr-413'</b> : Sr++ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'Ba-414'</b> : Ba++ Aqvist's cation parameters: JPC,94,8021 (90)</li>
+	  <li><b>'O -434'</b> : O in OH- Hydroxide O-H = 0.953A</li>
+	  <li><b>'HO-435'</b> : H in OH- JACS 108,2517 (86)</li>
+	  <li><b>'U -436'</b> : U in UO2+ J. Mol. Struct. 366, 55 (96)</li>
+	  <li><b>'OU-437'</b> : O in UO2+ r(U-O) = 1.80 A</li>
+	  <li><b>'CA-500'</b> : CG in Trp</li>
+	  <li><b>'CA-501'</b> : CD C in Trp</li>
+	  <li><b>'CA-502'</b> : CE C in Trp</li>
+	  <li><b>'NA-503'</b> : NE in Trp</li>
+	  <li><b>'H -504'</b> : H on NE in Trp</li>
+	  <li><b>'CT-505'</b> : CB in His</li>
+	  <li><b>'CA-506'</b> : CE1 in HID,HIE</li>
+	  <li><b>'CA-507'</b> : CD2 in HID, CG in HIE</li>
+	  <li><b>'CA-508'</b> : CG in HID, CD2 in HIE</li>
+	  <li><b>'CA-509'</b> : CE1 in HIP</li>
+	  <li><b>'CA-510'</b> : CG, CD2 in HIP</li>
+	  <li><b>'NB-511'</b> : NE in HID, ND in HIE</li>
+	  <li><b>'NA-512'</b> : N in HIP</li>
+	  <li><b>'H -513'</b> : H on N in HIP</li>
+        </ul>
+      </ul>
+      <b>Coulombic interactions</b> 
+      <ul>
+        OPLS-1996 uses atom-centered point charges to represent the electrostatic interactions.
+	Each of the atom types listed above has a default charge suggested by the forcefield and 
+	you can use these default charges by using the 'bond increment' option.
+      </ul>
+      <b>Improper torsions</b> 
+      <ul>
+        OPLS-aa uses stereocenter improper torsions to enforce planarity in aromatic rings, 
+	around amide nitrogens, and around other sp2 carbons.  Remember that you can set the 
+	improper type to 0 to have the code automatically determine the improper type (so long 
+	as inpstyle is 2).  Improper torsions for proteins are exactly the same as implemented in
+	AMBER96 - even though OPLS puts the stereocenter in the second position of the torsion,
+        you still define them in towhee putting it in the first position (towhee automatically
+	adjusts the parameter order for you).
+      </ul>
+      <b>Proteins</b> 
+      <ul>
+	The OPLS-aa protein builder has been implemented with all charges verbatim from WLJ 1996.
+	(Note that the sidechain charges on Met and Cys were later revised in OPLS-2001). Because many
+	of the bonded parameters are unpublished, they have been cobbled together from other OPLS-aa
+	implementations, namely ffoplsaabon.itp in GROMACS 3.2.1 and oplsaa.prm in TINKER 4.0- the origin 
+	of added parameters is referenced in the comments of ffoplsaa.F.  Most of the missing parameters merely
+	required additional aliases to existing entries because of the above naming convention.  Note that 
+	GROMACS uses nanometers and KJoules instead of Angstroms and Kcals so 
+	<a href="http://www.ks.uiuc.edu/Research/namd/mailing_list/namd-l/1358.html">
+        unit conversions</a> are necessary when comparing Towhee and GROMACS results.
+
+	Here is a complete list of the codes for the 20	amino acids, plus some other functional
+	groups that work with the protein builder.
+	<ul>
+
+	  <li>'a0' alanine</li>
+	  <li>'c0' cysteine with hydrogen on the sulfur</li>
+	  <li>'cs' cysteine in a disulfide bond</li>
+	  <li>'d-' aspartic acid deprotonated</li>
+	  <li>'e-' glutamic acid deprotonated</li>
+	  <li>'f0' phenylalanine</li>
+	  <li>'g0' glycine</li>
+	  <li>'h+' histidine both N protonated</li>
+	  <li>'hd' histidine neutral with only N<sub>d</sub> protonated</li>
+	  <li>'he' histidine neutral with only N<sub>e</sub> protonated</li>
+	  <li>'i0' isoleucine</li>
+	  <li>'k+' lysine protonated</li>
+	  <li>'l0' leucine</li>
+	  <li>'m0' methionine</li>
+	  <li>'n0' asparagine</li>
+	  <li>'p0' proline</li>
+	  <li>'q0' glutamine</li>
+	  <li>'r+' arginine protonated</li>
+	  <li>'s0' serine</li>
+	  <li>'t0' threonine</li>
+	  <li>'v0' valine</li>
+	  <li>'w0' tryptophan.  Despite a great deal of effort this amino acid is still not working properly with this
+	    forcefield as there are many parameters that are missing.  You will get an error if you include this 
+	    amino acid for this forcefield.
+	  </li>
+	  <li>'y0' tyrosine</li>
+	  <li>'za' acetyl cap on the N-terminus</li>
+	  <li>'zm' amide cap (NH<sub>2</sub>) on the C-terminus.</li>
+	  <li>'zn' N-methylamide cap on the C-terminus</li>
+	  <li>'zf' formaldahyde cap on the N-terminus</li>
+	</ul>
+      </ul>
+      <a href="../towhee_capabilities.html">Return to the Towhee Capabilities web page</a> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<hr width="715" align="left">
+<i><font size="2">Send comments to:</font></i> <font size="2"> 
+<a href="mailto:marcus_martin@users.sourceforge.net">Marcus G. Martin</a><br>
+<i>Last updated:</i> 
+<!-- #BeginDate format:Am1 -->July 18, 2006<!-- #EndDate -->
+</font> <br>
+</body>
+</html>
