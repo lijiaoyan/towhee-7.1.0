@@ -1980,7 +1980,8 @@ c     --- insertion/removal move used in grand canonical ensemble
       call twh_pmuvtcbswap(GLB_GET,pmtest)
       if ( rm .le. pmtest ) then
          DEBUG_WRITE('MOVE: insert/remove move')
-         call twh_swapmoves(lfailure,SWAP_CB_GC,imolty,ibox)
+C         call twh_swapmoves(lfailure,SWAP_CB_GC,imolty,ibox)
+         call twh_swapmoves(lfailure,SWAP_CB_GC,imolty,1)
          return
       endif
 
